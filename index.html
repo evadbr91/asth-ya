@@ -2,499 +2,372 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Voyage & Bien-être — Thés & Bijoux | Sylvie Materne</title>
-  <meta name="description" content="Thés & infusions façon globe-trotter + bijoux — conseils, dégustations, commandes et ateliers à domicile. VDI indépendante." />
-  <meta name="theme-color" content="#07070c" />
-
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thés & Infusions • Asthéya — Conseillère VDI | NOM MAMAN</title>
+  <meta name="description" content="Thés & infusions Asthéya : évasion & bien-être. Conseils personnalisés, ateliers à domicile, commandes via votre conseillère VDI." />
+  <meta name="theme-color" content="#2f5b4a" />
   <style>
     :root{
-      --bg0:#06060b;
-      --bg1:#090a12;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.09);
-      --line: rgba(255,255,255,.12);
-      --txt:#f2f4ff;
-      --muted: rgba(242,244,255,.72);
-      --muted2: rgba(242,244,255,.55);
-      --shadow: 0 18px 60px rgba(0,0,0,.55);
-      --shadow2: 0 10px 30px rgba(0,0,0,.45);
-      --r: 20px;
-      --r2: 28px;
-      --max: 1120px;
+      --bg:#fbfaf6;
+      --bg2:#f4f1e8;
+      --card:#ffffff;
+      --ink:#1f2b25;
+      --muted:#5e6d65;
+      --line:rgba(31,43,37,.10);
+      --shadow: 0 14px 40px rgba(31,43,37,.10);
+      --shadow2: 0 10px 26px rgba(31,43,37,.08);
 
-      --a1:#7c5cff;
-      --a2:#22d3ee;
-      --a3:#34d399;
-      --a4:#f59e0b;
+      --green:#2f5b4a;
+      --green2:#3f7a62;
+      --sage:#a9b9ad;
+      --sand:#d7c6a4;
+      --gold:#c6a45b;
+
+      --r:18px;
+      --r2:26px;
+      --max:1120px;
+
+      --serif: ui-serif, Georgia, "Times New Roman", Times, serif;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--txt);
+      font-family:var(--sans);
+      color:var(--ink);
       background:
-        radial-gradient(1200px 700px at 10% 10%, rgba(124,92,255,.16), transparent 55%),
-        radial-gradient(1100px 650px at 90% 20%, rgba(34,211,238,.14), transparent 55%),
-        radial-gradient(900px 600px at 60% 95%, rgba(52,211,153,.12), transparent 55%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+        radial-gradient(1200px 650px at 12% 10%, rgba(47,91,74,.10), transparent 55%),
+        radial-gradient(950px 580px at 90% 20%, rgba(198,164,91,.10), transparent 55%),
+        radial-gradient(900px 600px at 55% 95%, rgba(169,185,173,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
       overflow-x:hidden;
     }
-
-    a{ color:inherit; text-decoration:none; }
-    button{ font:inherit; }
-    .wrap{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
-
-    .noise{
-      position:fixed; inset:0; pointer-events:none;
-      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
-      mix-blend-mode:overlay;
-      opacity:.08;
-    }
-
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(var(--max), calc(100% - 44px)); margin:0 auto;}
     .topbar{
       position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(12px);
-      background: rgba(6,6,11,.55);
-      border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+      background: rgba(251,250,246,.72);
+      border-bottom:1px solid var(--line);
     }
-    .topbar .row{
+    .toprow{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0;
       gap:14px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
-      letter-spacing:.2px;
+      display:flex; align-items:center; gap:12px;
+      min-width: 240px;
     }
-    .logo{
-      width:36px; height:36px; border-radius:12px;
+    .mark{
+      width:42px; height:42px; border-radius:14px;
       background:
-        radial-gradient(14px 14px at 30% 30%, rgba(255,255,255,.35), transparent 60%),
-        linear-gradient(135deg, rgba(124,92,255,.95), rgba(34,211,238,.85));
-      box-shadow: 0 12px 30px rgba(124,92,255,.18);
+        radial-gradient(14px 14px at 28% 28%, rgba(255,255,255,.85), transparent 55%),
+        linear-gradient(135deg, var(--green), var(--green2));
+      box-shadow: 0 14px 30px rgba(47,91,74,.18);
+      border: 1px solid rgba(47,91,74,.18);
       position:relative;
     }
-    .logo:after{
+    .mark:after{
       content:"";
-      position:absolute; inset:8px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.22);
-      background: rgba(0,0,0,.10);
+      position:absolute; inset:10px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.55);
+      opacity:.85;
     }
-    .brand strong{ font-size:14px; }
-    .brand span{ font-size:12px; color:var(--muted2); display:block; margin-top:1px; }
+    .brand strong{display:block; font-size:13px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
     nav{
-      display:flex; align-items:center; gap:14px;
+      display:flex; gap:14px; align-items:center;
     }
     .navlink{
-      font-size:13px;
-      color:var(--muted);
+      font-size:13px; color:var(--muted);
       padding:10px 10px;
-      border-radius:12px;
+      border-radius:999px;
       border:1px solid transparent;
-      transition: .2s ease;
+      transition: .18s ease;
     }
     .navlink:hover{
-      color:var(--txt);
-      background: rgba(255,255,255,.06);
-      border-color: rgba(255,255,255,.10);
+      color:var(--ink);
+      background: rgba(47,91,74,.06);
+      border-color: rgba(47,91,74,.10);
     }
-    .cta{
-      display:flex; align-items:center; gap:10px;
-    }
-
-    .pill{
+    .actions{display:flex; gap:10px; align-items:center;}
+    .btn{
       display:inline-flex; align-items:center; gap:10px;
-      padding:10px 14px;
+      padding:11px 14px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
+      border:1px solid rgba(31,43,37,.14);
+      background: rgba(255,255,255,.70);
       box-shadow: var(--shadow2);
-      transition: transform .15s ease, background .2s ease, border-color .2s ease;
+      font-size:13px;
       cursor:pointer;
+      transition: transform .14s ease, background .18s ease, border-color .18s ease;
       user-select:none;
     }
-    .pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.085); border-color: rgba(255,255,255,.20); }
-    .pill.primary{
-      border-color: rgba(124,92,255,.40);
-      background:
-        radial-gradient(120px 60px at 15% 25%, rgba(255,255,255,.20), transparent 60%),
-        linear-gradient(135deg, rgba(124,92,255,.90), rgba(34,211,238,.70));
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.90);
+      border-color: rgba(31,43,37,.18);
     }
-    .pill.primary:hover{ transform: translateY(-2px); }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      border-color: rgba(47,91,74,.22);
+      color:#fff;
+    }
+    .btn.primary:hover{transform: translateY(-2px);}
     .dot{
-      width:8px; height:8px; border-radius:999px;
-      background: rgba(255,255,255,.95);
-      box-shadow: 0 0 0 4px rgba(255,255,255,.12);
+      width:8px;height:8px;border-radius:999px;background:var(--gold);
+      box-shadow: 0 0 0 4px rgba(198,164,91,.18);
+    }
+    @media (max-width: 980px){
+      nav{display:none;}
+      .brand{min-width:auto;}
     }
 
-    .hero{
-      position:relative;
-      padding:54px 0 28px;
-    }
-    .heroGrid{
+    .hero{padding:48px 0 22px;}
+    .gridHero{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:22px;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
       align-items:stretch;
     }
     @media (max-width: 980px){
-      .heroGrid{ grid-template-columns:1fr; }
-      nav{ display:none; }
+      .gridHero{grid-template-columns:1fr;}
     }
 
-    .card{
+    .panel{
       border-radius: var(--r2);
-      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.045));
-      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(31,43,37,.10);
       box-shadow: var(--shadow);
-      position:relative;
       overflow:hidden;
+      position:relative;
     }
-    .card:before{
+    .panel:before{
       content:"";
       position:absolute; inset:-2px;
       background:
-        radial-gradient(700px 240px at 15% 15%, rgba(124,92,255,.22), transparent 55%),
-        radial-gradient(600px 260px at 85% 35%, rgba(34,211,238,.18), transparent 58%),
-        radial-gradient(500px 240px at 40% 95%, rgba(52,211,153,.14), transparent 60%);
+        radial-gradient(650px 240px at 12% 18%, rgba(47,91,74,.10), transparent 60%),
+        radial-gradient(520px 220px at 90% 35%, rgba(198,164,91,.10), transparent 60%),
+        radial-gradient(520px 240px at 42% 110%, rgba(169,185,173,.22), transparent 62%);
       pointer-events:none;
-      filter: blur(10px);
-      opacity:.9;
     }
-    .cardInner{ position:relative; padding:26px; }
-    .badgeRow{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
-    .badge{
+    .inner{position:relative; padding:24px;}
+    .kicker{
+      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+    }
+    .pill{
       display:inline-flex; align-items:center; gap:8px;
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.18);
+      border:1px solid rgba(31,43,37,.12);
+      background: rgba(255,255,255,.66);
       color:var(--muted);
       font-size:12px;
     }
-    .badge i{
-      width:8px; height:8px; border-radius:999px;
-      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(34,211,238,.95));
+    .pill i{
+      width:8px;height:8px;border-radius:999px;background:var(--green2);
       display:inline-block;
     }
     h1{
-      font-size:44px;
+      font-family:var(--serif);
+      font-weight:700;
+      font-size:46px;
       line-height:1.05;
       margin:14px 0 10px;
       letter-spacing:-.6px;
     }
-    @media (max-width: 520px){
-      h1{ font-size:36px; }
-    }
+    @media (max-width:520px){h1{font-size:38px}}
     .lead{
+      margin:0 0 14px;
       color:var(--muted);
       font-size:15px;
-      line-height:1.6;
-      margin:0 0 16px;
-      max-width: 58ch;
+      line-height:1.65;
+      max-width: 68ch;
     }
-
-    .heroActions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
-    .mini{
-      font-size:12px; color:var(--muted2);
+    .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;}
+    .small{
       margin-top:12px;
+      color: rgba(94,109,101,.85);
+      font-size:12px;
+      line-height:1.5;
     }
 
-    .sideCard{
+    .sideTop{
+      display:grid;
+      gap:12px;
+    }
+    .poster{
       border-radius: var(--r2);
-      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(900px 320px at 15% 25%, rgba(47,91,74,.14), transparent 60%),
+        radial-gradient(760px 320px at 92% 35%, rgba(198,164,91,.14), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.70), rgba(255,255,255,.52));
+      border:1px solid rgba(31,43,37,.10);
       box-shadow: var(--shadow2);
       overflow:hidden;
       position:relative;
+      padding:18px;
+      min-height: 190px;
     }
-    .sideInner{ padding:22px; position:relative; }
-    .map{
-      height:180px;
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.12);
-      background:
-        radial-gradient(900px 300px at 0% 0%, rgba(124,92,255,.16), transparent 60%),
-        radial-gradient(700px 260px at 100% 30%, rgba(34,211,238,.14), transparent 60%),
-        radial-gradient(600px 280px at 45% 110%, rgba(245,158,11,.12), transparent 55%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='320'%3E%3Cg opacity='.65'%3E%3Cpath d='M115 120c30-40 68-60 120-52 46 7 86 25 138 15 52-10 90-40 152-36 62 4 105 44 146 62 41 18 83 14 120-8' fill='none' stroke='rgba(255,255,255,.22)' stroke-width='2'/%3E%3Cpath d='M80 210c50-20 98-22 150-10 52 12 92 38 150 30 58-8 98-38 156-34 58 4 92 34 132 48 40 14 82 8 118-10' fill='none' stroke='rgba(255,255,255,.18)' stroke-width='2'/%3E%3C/g%3E%3Cg opacity='.8'%3E%3Ccircle cx='210' cy='105' r='5' fill='rgba(34,211,238,.9)'/%3E%3Ccircle cx='420' cy='130' r='5' fill='rgba(124,92,255,.9)'/%3E%3Ccircle cx='655' cy='150' r='5' fill='rgba(52,211,153,.9)'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: cover;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
-      position:relative;
+    .posterTitle{
+      font-family:var(--serif);
+      font-size:20px;
+      margin:0 0 6px;
+      letter-spacing:-.3px;
     }
-    .stampRow{
+    .posterText{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+      max-width: 52ch;
+    }
+    .stats{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:12px;
-      margin-top:14px;
     }
-    .stamp{
-      border-radius: 18px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.16);
+    .stat{
+      border-radius: 20px;
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(31,43,37,.10);
+      box-shadow: var(--shadow2);
       padding:14px;
-      display:flex; gap:12px; align-items:flex-start;
     }
-    .seal{
-      width:34px; height:34px; border-radius:12px;
-      background:
-        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.28), transparent 60%),
-        linear-gradient(135deg, rgba(245,158,11,.75), rgba(52,211,153,.55));
-      border:1px solid rgba(255,255,255,.16);
-      box-shadow: 0 10px 20px rgba(0,0,0,.25);
-      flex:0 0 auto;
-    }
-    .stamp strong{ display:block; font-size:13px; margin-top:1px; }
-    .stamp span{ display:block; font-size:12px; color:var(--muted); margin-top:3px; line-height:1.35; }
+    .stat b{display:block; font-size:14px}
+    .stat span{display:block; margin-top:4px; font-size:12px; color:var(--muted); line-height:1.4}
 
-    .section{ padding:34px 0; }
-    .sectionTitle{
+    .section{padding:28px 0;}
+    .titleRow{
       display:flex; align-items:flex-end; justify-content:space-between;
       gap:14px;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
     h2{
+      font-family:var(--serif);
+      font-size:26px;
+      letter-spacing:-.35px;
       margin:0;
-      font-size:22px;
-      letter-spacing:-.2px;
     }
-    .sub{
-      color:var(--muted2);
-      font-size:13px;
-      line-height:1.4;
-    }
-
-    .grid3{
+    .sub{color:var(--muted); font-size:13px; line-height:1.5}
+    .grid2{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.1fr .9fr;
       gap:14px;
+      align-items:start;
     }
     @media (max-width: 980px){
-      .grid3{ grid-template-columns: 1fr; }
-      .stampRow{ grid-template-columns:1fr; }
+      .grid2{grid-template-columns:1fr;}
+      .stats{grid-template-columns:1fr;}
     }
 
-    .infoCard{
+    .list{
+      margin:0; padding-left: 18px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .list li{margin:6px 0}
+    .callouts{
+      display:grid;
+      gap:12px;
+    }
+    .box{
       border-radius: var(--r2);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.72);
+      border:1px solid rgba(31,43,37,.10);
       box-shadow: var(--shadow2);
-      padding:18px;
-      position:relative;
-      overflow:hidden;
+      padding:16px;
     }
-    .infoCard:before{
-      content:"";
-      position:absolute; inset:-1px;
-      background: radial-gradient(400px 140px at 15% 15%, rgba(124,92,255,.12), transparent 55%);
-      pointer-events:none;
+    .box h3{
+      margin:0 0 6px;
+      font-family:var(--serif);
+      font-size:18px;
+      letter-spacing:-.25px;
     }
-    .infoCard .k{
-      font-size:12px; color:var(--muted2);
-      letter-spacing:.2px;
-      margin-bottom:6px;
-    }
-    .infoCard .v{
-      font-size:14px; line-height:1.5; color:var(--muted);
-      margin:0;
-    }
+    .box p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
 
-    .toolbar{
-      display:flex; flex-wrap:wrap; gap:10px;
-      align-items:center; justify-content:space-between;
-      margin: 12px 0 14px;
-    }
-    .filters{
-      display:flex; flex-wrap:wrap; gap:8px; align-items:center;
-    }
-    .chip{
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
-      padding:9px 12px;
-      border-radius: 999px;
-      cursor:pointer;
-      transition:.2s ease;
-      font-size:13px;
-    }
-    .chip:hover{ background: rgba(255,255,255,.08); color: var(--txt); }
-    .chip.active{
-      background:
-        radial-gradient(140px 60px at 30% 20%, rgba(255,255,255,.20), transparent 60%),
-        linear-gradient(135deg, rgba(124,92,255,.85), rgba(34,211,238,.65));
-      border-color: rgba(124,92,255,.45);
-      color: rgba(255,255,255,.95);
-    }
-    .search{
-      flex:1 1 260px;
-      display:flex; justify-content:flex-end;
-    }
-    .search input{
-      width:min(420px, 100%);
-      padding:11px 14px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.20);
-      color: var(--txt);
-      outline:none;
-    }
-    .search input::placeholder{ color: rgba(242,244,255,.45); }
-
-    .productGrid{
+    .prodGrid{
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap:14px;
     }
-    @media (max-width: 980px){
-      .productGrid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 1100px){ .prodGrid{grid-template-columns:repeat(2,1fr);} }
+    @media (max-width: 560px){ .prodGrid{grid-template-columns:1fr;} }
 
-    .product{
+    .prod{
       border-radius: var(--r2);
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(31,43,37,.10);
       box-shadow: var(--shadow2);
       overflow:hidden;
       cursor:pointer;
-      transition: transform .15s ease, border-color .2s ease, background .2s ease;
-      position:relative;
+      transition: transform .14s ease, box-shadow .18s ease, border-color .18s ease;
     }
-    .product:hover{
+    .prod:hover{
       transform: translateY(-2px);
-      border-color: rgba(255,255,255,.16);
-      background: rgba(255,255,255,.065);
+      box-shadow: 0 18px 46px rgba(31,43,37,.12);
+      border-color: rgba(47,91,74,.18);
     }
     .ph{
-      height:150px;
-      border-bottom:1px solid rgba(255,255,255,.10);
+      height:132px;
       background:
-        radial-gradient(600px 200px at 10% 10%, rgba(124,92,255,.18), transparent 55%),
-        radial-gradient(520px 200px at 90% 20%, rgba(34,211,238,.14), transparent 55%),
-        radial-gradient(460px 220px at 45% 120%, rgba(245,158,11,.12), transparent 55%),
-        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+        radial-gradient(520px 220px at 18% 20%, rgba(47,91,74,.12), transparent 60%),
+        radial-gradient(520px 220px at 90% 30%, rgba(198,164,91,.14), transparent 60%),
+        linear-gradient(135deg, rgba(244,241,232,.9), rgba(255,255,255,.92));
+      border-bottom:1px solid rgba(31,43,37,.10);
+      position:relative;
+      padding:14px;
       display:flex;
       align-items:flex-end;
       justify-content:space-between;
-      padding:14px;
-      position:relative;
+      gap:10px;
     }
     .tag{
       font-size:12px;
       padding:7px 10px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.16);
+      border-radius:999px;
+      border:1px solid rgba(31,43,37,.12);
+      background: rgba(255,255,255,.75);
       color: var(--muted);
     }
     .price{
       font-size:12px;
       padding:7px 10px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.16);
-      color: rgba(255,255,255,.90);
-    }
-    .pbody{ padding:14px 14px 16px; }
-    .pname{ margin:0; font-size:15px; letter-spacing:-.1px; }
-    .pdesc{ margin:7px 0 0; color: var(--muted); font-size:13px; line-height:1.45; }
-
-    .ctaRow{
-      display:flex; flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-    }
-
-    .footer{
-      padding:28px 0 44px;
-      border-top:1px solid rgba(255,255,255,.10);
-      color: var(--muted2);
-      font-size:12px;
-    }
-    .footer a{ text-decoration:underline; text-decoration-color: rgba(255,255,255,.18); }
-
-    .modal{
-      position:fixed; inset:0;
-      background: rgba(0,0,0,.62);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:22px;
-      z-index:80;
-    }
-    .modal.open{ display:flex; }
-    .modalBox{
-      width:min(860px, 100%);
-      border-radius: 26px;
-      background: rgba(10,10,16,.92);
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow: 0 30px 90px rgba(0,0,0,.7);
-      overflow:hidden;
-      backdrop-filter: blur(14px);
-    }
-    .modalTop{
-      display:flex; justify-content:space-between; align-items:center;
-      padding:14px 16px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-    }
-    .x{
-      width:40px; height:40px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-      color: rgba(255,255,255,.90);
-      cursor:pointer;
-    }
-    .x:hover{ background: rgba(255,255,255,.085); }
-    .modalContent{
-      display:grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap:0;
-    }
-    @media (max-width: 900px){
-      .modalContent{ grid-template-columns:1fr; }
-    }
-    .modalMedia{
-      min-height: 260px;
-      background:
-        radial-gradient(800px 260px at 20% 20%, rgba(124,92,255,.22), transparent 60%),
-        radial-gradient(700px 260px at 90% 30%, rgba(34,211,238,.18), transparent 60%),
-        radial-gradient(600px 280px at 40% 120%, rgba(52,211,153,.14), transparent 60%),
-        linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
-      border-right:1px solid rgba(255,255,255,.10);
-      padding:18px;
-      display:flex; flex-direction:column; justify-content:flex-end;
-    }
-    @media (max-width: 900px){
-      .modalMedia{ border-right:none; border-bottom:1px solid rgba(255,255,255,.10); }
-    }
-    .modalInfo{ padding:18px 18px 20px; }
-    .modalInfo h3{ margin:2px 0 8px; font-size:20px; letter-spacing:-.2px; }
-    .modalInfo p{ margin:0; color: var(--muted); line-height:1.55; font-size:14px; }
-    .modalMeta{
-      display:flex; flex-wrap:wrap; gap:8px;
-      margin-top:12px;
-    }
-    .miniPill{
-      padding:8px 10px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: var(--muted);
+      border:1px solid rgba(31,43,37,.12);
+      background: rgba(255,255,255,.75);
+      color: var(--ink);
+    }
+    .pb{padding:14px 14px 16px;}
+    .pn{margin:0; font-size:15px; letter-spacing:-.1px}
+    .pd{margin:7px 0 0; color:var(--muted); font-size:13px; line-height:1.45}
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 980px){ .split{grid-template-columns:1fr;} }
+
+    .note{
       font-size:12px;
+      color: rgba(94,109,101,.9);
+      line-height:1.55;
+      margin-top:10px;
     }
 
     .contactGrid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.1fr .9fr;
       gap:14px;
     }
-    @media (max-width: 980px){
-      .contactGrid{ grid-template-columns: 1fr; }
-    }
+    @media (max-width: 980px){ .contactGrid{grid-template-columns:1fr;} }
+
     .form{
       display:grid;
       gap:10px;
@@ -503,50 +376,117 @@
     .form input,.form textarea{
       width:100%;
       padding:12px 14px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.20);
-      color: var(--txt);
+      border-radius: 16px;
+      border:1px solid rgba(31,43,37,.12);
+      background: rgba(255,255,255,.78);
+      color:var(--ink);
       outline:none;
+      font-size:14px;
     }
-    .form textarea{ min-height: 120px; resize: vertical; }
-    .hint{ font-size:12px; color: var(--muted2); margin-top:8px; }
+    .form textarea{min-height: 120px; resize: vertical;}
+    .footer{
+      padding:28px 0 44px;
+      border-top:1px solid var(--line);
+      color: rgba(94,109,101,.92);
+      font-size:12px;
+      line-height:1.6;
+    }
+    .footer a{text-decoration:underline; text-decoration-color: rgba(31,43,37,.20);}
 
-    .tinyLinks{ display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
-    .tinyLinks a{ text-decoration:underline; text-decoration-color: rgba(255,255,255,.20); }
+    .modal{
+      position:fixed; inset:0;
+      display:none; align-items:center; justify-content:center;
+      padding:22px;
+      background: rgba(16,22,19,.46);
+      z-index:90;
+    }
+    .modal.open{display:flex;}
+    .mBox{
+      width:min(900px, 100%);
+      border-radius: 28px;
+      background: rgba(255,255,255,.96);
+      border:1px solid rgba(31,43,37,.12);
+      box-shadow: 0 30px 90px rgba(31,43,37,.22);
+      overflow:hidden;
+    }
+    .mTop{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 14px;
+      border-bottom:1px solid rgba(31,43,37,.10);
+      background: rgba(244,241,232,.55);
+    }
+    .x{
+      width:42px; height:42px;
+      border-radius: 16px;
+      border:1px solid rgba(31,43,37,.12);
+      background: rgba(255,255,255,.85);
+      cursor:pointer;
+      font-size:16px;
+    }
+    .x:hover{background:#fff;}
+    .mContent{
+      display:grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap:0;
+    }
+    @media (max-width: 900px){ .mContent{grid-template-columns:1fr;} }
+    .mMedia{
+      min-height: 260px;
+      background:
+        radial-gradient(820px 280px at 18% 20%, rgba(47,91,74,.14), transparent 62%),
+        radial-gradient(720px 280px at 90% 28%, rgba(198,164,91,.16), transparent 62%),
+        linear-gradient(135deg, rgba(244,241,232,.9), rgba(255,255,255,.95));
+      border-right:1px solid rgba(31,43,37,.10);
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      gap:10px;
+    }
+    @media (max-width: 900px){ .mMedia{border-right:none;border-bottom:1px solid rgba(31,43,37,.10);} }
+    .mMeta{display:flex; flex-wrap:wrap; gap:8px;}
+    .miniPill{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(31,43,37,.12);
+      background: rgba(255,255,255,.78);
+      font-size:12px;
+      color:var(--muted);
+    }
+    .mInfo{padding:16px 16px 18px;}
+    .mInfo h3{
+      margin:2px 0 8px;
+      font-family:var(--serif);
+      font-size:22px;
+      letter-spacing:-.3px;
+    }
+    .mInfo p{margin:0; color:var(--muted); line-height:1.6; font-size:14px;}
   </style>
 </head>
 
 <body>
-  <div class="noise"></div>
-
   <header class="topbar">
     <div class="wrap">
-      <div class="row">
+      <div class="toprow">
         <a class="brand" href="#top">
-          <div class="logo" aria-hidden="true"></div>
+          <div class="mark" aria-hidden="true"></div>
           <div>
-            <strong>Sylvie Materne</strong>
-            <span>Thés · Infusions · Bijoux — esprit globe-trotter</span>
+            <strong>NOM MAMAN • Conseillère VDI</strong>
+            <span>Thés & infusions Asthéya • évasion & bien-être</span>
           </div>
         </a>
 
-        <nav aria-label="Navigation">
+        <nav>
           <a class="navlink" href="#univers">Univers</a>
-          <a class="navlink" href="#selection">Sélection</a>
+          <a class="navlink" href="#favoris">Favoris</a>
+          <a class="navlink" href="#vdi">VDI</a>
           <a class="navlink" href="#ateliers">Ateliers</a>
           <a class="navlink" href="#contact">Contact</a>
         </nav>
 
-        <div class="cta">
-          <a class="pill" href="#selection" title="Voir la sélection">
-            <span class="dot" aria-hidden="true"></span>
-            <span>Voir la sélection</span>
-          </a>
-          <a class="pill primary" href="#contact" title="Commander / Me contacter">
-            <span>Commander</span>
-            <span aria-hidden="true">→</span>
-          </a>
+        <div class="actions">
+          <a class="btn" href="#favoris"><span class="dot" aria-hidden="true"></span><span>Voir les favoris</span></a>
+          <a class="btn primary" href="#contact"><span>Commander</span><span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
@@ -555,406 +495,414 @@
   <main id="top">
     <section class="hero">
       <div class="wrap">
-        <div class="heroGrid">
-          <div class="card">
-            <div class="cardInner">
-              <div class="badgeRow">
-                <span class="badge"><i></i> Conseils personnalisés</span>
-                <span class="badge"><i></i> Dégustations & ateliers</span>
-                <span class="badge"><i></i> Thé + bijoux</span>
+        <div class="gridHero">
+          <div class="panel">
+            <div class="inner">
+              <div class="kicker">
+                <span class="pill"><i></i> Vente à domicile</span>
+                <span class="pill"><i></i> Conseils personnalisés</span>
+                <span class="pill"><i></i> Thé + bijoux</span>
               </div>
 
-              <h1>Une tasse, une escale. <br/>Un bijou, un souvenir.</h1>
+              <h1>Vente à domicile de thés & infusions</h1>
               <p class="lead">
-                Je t’aide à choisir des <b>thés & infusions</b> inspirés du voyage, et des <b>bijoux</b> à offrir (ou à s’offrir).
-                Le but : transformer tes pauses en petits moments d’évasion — simplement, à ton rythme.
+                Les arômes, les couleurs et les saveurs du thé invitent à de vrais moments d’<b>évasion</b> et de <b>bien-être</b>.
+                Ici, l’idée est simple : une tasse = une escale. Je t’aide à choisir selon tes goûts (fruité, floral, épicé, doux…)
+                et selon tes envies du moment.
               </p>
 
-              <div class="heroActions">
-                <a class="pill primary" href="#selection">
-                  <span>Découvrir la sélection</span><span aria-hidden="true">→</span>
-                </a>
-                <a class="pill" href="https://www.instagram.com/TON_INSTAGRAM/" target="_blank" rel="noopener">
-                  <span>Instagram</span><span aria-hidden="true">↗</span>
-                </a>
-                <a class="pill" href="https://wa.me/33XXXXXXXXX" target="_blank" rel="noopener">
-                  <span>WhatsApp</span><span aria-hidden="true">↗</span>
-                </a>
+              <div class="ctaRow">
+                <a class="btn primary" href="LIEN_BOUTIQUE_OU_COMMANDE" target="_blank" rel="noopener"><span>Boutique</span><span aria-hidden="true">↗</span></a>
+                <a class="btn" href="LIEN_CATALOGUE" target="_blank" rel="noopener"><span>Catalogue</span><span aria-hidden="true">↗</span></a>
+                <a class="btn" href="https://www.instagram.com/TON_INSTAGRAM/" target="_blank" rel="noopener"><span>Instagram</span><span aria-hidden="true">↗</span></a>
+                <a class="btn" href="https://wa.me/33XXXXXXXXX" target="_blank" rel="noopener"><span>WhatsApp</span><span aria-hidden="true">↗</span></a>
               </div>
 
-              <div class="mini">
-                VDI indépendante — je présente et conseille les produits, les commandes se font via mes liens officiels.
+              <div class="small">
+                VDI indépendante : je conseille et j’accompagne. Les commandes se font via mes liens officiels.
               </div>
             </div>
           </div>
 
-          <aside class="sideCard">
-            <div class="sideInner">
-              <div class="map" aria-hidden="true"></div>
-
-              <div class="stampRow">
-                <div class="stamp">
-                  <div class="seal" aria-hidden="true"></div>
-                  <div>
-                    <strong>Mini-rituel bien-être</strong>
-                    <span>Une recommandation simple selon ton humeur : détente, énergie, digestion, douceur…</span>
-                  </div>
-                </div>
-
-                <div class="stamp">
-                  <div class="seal" aria-hidden="true"></div>
-                  <div>
-                    <strong>Idées cadeaux</strong>
-                    <span>Associations “thé + bijou” prêtes à offrir : anniversaire, fête, merci, etc.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="ctaRow">
-                <a class="pill" href="#ateliers">
-                  <span>Organiser un atelier</span><span aria-hidden="true">→</span>
-                </a>
-                <a class="pill" href="#contact">
-                  <span>Me contacter</span><span aria-hidden="true">→</span>
-                </a>
+          <div class="sideTop">
+            <div class="poster">
+              <p class="posterTitle">Escale “Globe-trotter”</p>
+              <p class="posterText">
+                Une sélection inspirée du voyage : des notes qui font penser à une plage, un hammam, un jardin d’agrumes…
+                Dis-moi ce que tu aimes, je te propose 2–3 options sûres.
+              </p>
+              <div class="ctaRow" style="margin-top:12px;">
+                <a class="btn" href="#univers"><span>Découvrir l’univers</span><span aria-hidden="true">→</span></a>
+                <a class="btn" href="#ateliers"><span>Organiser un atelier</span><span aria-hidden="true">→</span></a>
               </div>
             </div>
-          </aside>
+
+            <div class="stats">
+              <div class="stat">
+                <b>Conseils rapides</b>
+                <span>En message, je te guide selon tes goûts + moment de la journée.</span>
+              </div>
+              <div class="stat">
+                <b>Idées cadeaux</b>
+                <span>Thé + bijou : une attention simple et élégante à offrir.</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <section id="univers" class="section">
       <div class="wrap">
-        <div class="sectionTitle">
+        <div class="titleRow">
           <div>
-            <h2>Univers “globe-trotter”</h2>
-            <div class="sub">Des escales, des arômes, des souvenirs — et des conseils comme si tu voyageais.</div>
+            <h2>Explorez l’univers du thé</h2>
+            <div class="sub">Une expérience “évasion & bien-être”, avec une sélection soignée.</div>
           </div>
         </div>
 
-        <div class="grid3">
-          <div class="infoCard">
-            <div class="k">Escale du moment</div>
-            <p class="v">Un thé qui sent les vacances, une infusion cocooning, ou une recette glacée… je te propose une “escale” selon la saison.</p>
+        <div class="grid2">
+          <div class="panel">
+            <div class="inner">
+              <p class="lead" style="margin-bottom:10px;">
+                Nos thés & infusions sont pensés pour te faire voyager à travers les saveurs, tout en restant simples à intégrer au quotidien.
+              </p>
+
+              <div style="font-family:var(--serif); font-size:18px; margin:10px 0 8px; letter-spacing:-.2px;">Nos thés et infusions sont :</div>
+              <ul class="list">
+                <li>Sélectionnés selon des critères de qualité (origine, traçabilité, équilibre aromatique).</li>
+                <li>Imaginés autour d’ambiances “escales” : détente, énergie, digestion, douceur…</li>
+                <li>Assemblés par des spécialistes pour obtenir des profils réguliers et agréables en tasse.</li>
+                <li>Parfaits à découvrir en dégustation lors d’un atelier à domicile.</li>
+              </ul>
+
+              <div class="ctaRow" style="margin-top:14px;">
+                <a class="btn primary" href="LIEN_BOUTIQUE_OU_COMMANDE" target="_blank" rel="noopener"><span>Accéder à la boutique</span><span aria-hidden="true">↗</span></a>
+                <a class="btn" href="#contact"><span>Me demander conseil</span><span aria-hidden="true">→</span></a>
+              </div>
+            </div>
           </div>
-          <div class="infoCard">
-            <div class="k">Sélection guidée</div>
-            <p class="v">Tu me dis ce que tu aimes (fruité, floral, épicé, léger) et je te conseille une combinaison simple et sûre.</p>
-          </div>
-          <div class="infoCard">
-            <div class="k">Bijoux & intentions</div>
-            <p class="v">Un bijou peut raconter une histoire : cadeau symbolique, porte-bonheur, ou juste coup de cœur — je t’aide à choisir.</p>
+
+          <div class="callouts">
+            <div class="box">
+              <h3>Ta sélection en 2 minutes</h3>
+              <p>Tu me dis : “plutôt fruité / épicé / doux / sans théine” + “matin/soir”, je te propose une escale adaptée.</p>
+            </div>
+            <div class="box">
+              <h3>Bijoux (petits prix)</h3>
+              <p>Si ta mère vend aussi les bijoux : on peut proposer une idée cadeau “tasse + bijou” (pack simple).</p>
+            </div>
+            <div class="box">
+              <h3>Recettes faciles</h3>
+              <p>Option : thé glacé, latte, infusion “wellness” — je te donne 1 recette simple selon le produit.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="selection" class="section">
+    <section id="favoris" class="section">
       <div class="wrap">
-        <div class="sectionTitle">
+        <div class="titleRow">
           <div>
-            <h2>La sélection</h2>
-            <div class="sub">Clique sur un produit pour voir le détail. Filtre “Thés” ou “Bijoux”.</div>
+            <h2>Vos thés & infusions favoris</h2>
+            <div class="sub">Clique pour voir le détail + quoi choisir selon ton envie.</div>
           </div>
         </div>
 
-        <div class="toolbar">
-          <div class="filters" role="tablist" aria-label="Filtres produits">
-            <button class="chip active" data-filter="all" type="button">Tout</button>
-            <button class="chip" data-filter="the" type="button">Thés & infusions</button>
-            <button class="chip" data-filter="bijou" type="button">Bijoux</button>
-            <button class="chip" data-filter="cadeau" type="button">Idées cadeaux</button>
-          </div>
-          <div class="search">
-            <input id="q" type="search" placeholder="Rechercher (ex: fruité, détente, bracelet…)" />
+        <div id="prodGrid" class="prodGrid"></div>
+
+        <div class="ctaRow" style="margin-top:14px;">
+          <a class="btn" href="LIEN_TOUTES_REFERENCES" target="_blank" rel="noopener"><span>Tous les produits</span><span aria-hidden="true">↗</span></a>
+          <a class="btn primary" href="#contact"><span>Je veux commander</span><span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="note">
+          Tu peux remplacer les 4 cartes par les vrais produits (nom, prix, lien). C’est fait pour être modifiable facilement.
+        </div>
+      </div>
+    </section>
+
+    <section id="vdi" class="section">
+      <div class="wrap">
+        <div class="titleRow">
+          <div>
+            <h2>VDI : comment je t’accompagne</h2>
+            <div class="sub">Ici, c’est pour vendre proprement : clair, simple, et ultra rassurant.</div>
           </div>
         </div>
 
-        <div id="products" class="productGrid" aria-live="polite"></div>
+        <div class="split">
+          <div class="panel">
+            <div class="inner">
+              <div style="font-family:var(--serif); font-size:20px; margin:0 0 6px; letter-spacing:-.25px;">Commander avec ta conseillère</div>
+              <p class="lead" style="margin:0;">
+                Tu m’écris ce que tu cherches (goût, moment, budget). Je te propose une sélection courte,
+                puis je t’envoie le lien de commande officiel et je reste dispo si tu hésites.
+              </p>
+              <div class="ctaRow">
+                <a class="btn primary" href="#contact"><span>Demander une sélection</span><span aria-hidden="true">→</span></a>
+                <a class="btn" href="https://www.instagram.com/TON_INSTAGRAM/" target="_blank" rel="noopener"><span>Me MP sur Instagram</span><span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
 
-        <div class="ctaRow" style="margin-top:16px;">
-          <a class="pill primary" href="#contact"><span>Je veux commander</span><span aria-hidden="true">→</span></a>
-          <a class="pill" href="LIEN_DE_COMMANDE_ICI" target="_blank" rel="noopener"><span>Boutique / Catalogue</span><span aria-hidden="true">↗</span></a>
+          <div class="panel">
+            <div class="inner">
+              <div style="font-family:var(--serif); font-size:20px; margin:0 0 6px; letter-spacing:-.25px;">Idées cadeaux (thé + bijou)</div>
+              <p class="lead" style="margin:0;">
+                Dis-moi pour qui (âge, style, occasion), je te propose un duo simple :
+                <b>un thé/infusion</b> + <b>un bijou</b> à petit budget.
+              </p>
+              <div class="ctaRow">
+                <a class="btn" href="#contact"><span>Créer un cadeau</span><span aria-hidden="true">→</span></a>
+                <a class="btn" href="https://wa.me/33XXXXXXXXX" target="_blank" rel="noopener"><span>WhatsApp</span><span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="hint">
-          Astuce : remplace “LIEN_DE_COMMANDE_ICI” par le lien officiel de ta mère (boutique / catalogue / lien VDI).
+        <div class="note">
+          Mention VDI : ce site est une vitrine personnelle. Les produits et marques appartiennent à leur société d’origine.
         </div>
       </div>
     </section>
 
     <section id="ateliers" class="section">
       <div class="wrap">
-        <div class="sectionTitle">
+        <div class="titleRow">
           <div>
-            <h2>Ateliers & dégustations</h2>
-            <div class="sub">Un moment convivial : découverte, conseils, idées recettes, et commandes si vous le souhaitez.</div>
+            <h2>Découverte des thés & infusions chez vous</h2>
+            <div class="sub">Le format qui marche le mieux : convivial + dégustation + conseils.</div>
           </div>
         </div>
 
-        <div class="grid3">
-          <div class="infoCard">
-            <div class="k">Format</div>
-            <p class="v">Chez toi / chez une amie / en petit groupe. Possible aussi en visio selon dispo.</p>
+        <div class="split">
+          <div class="panel">
+            <div class="inner">
+              <div style="font-family:var(--serif); font-size:20px; margin:0 0 6px; letter-spacing:-.25px;">Atelier à domicile</div>
+              <p class="lead" style="margin:0;">
+                Tu invites 4 à 8 personnes, on goûte quelques références, et je vous aide à trouver votre “escale”.
+                Possible aussi en format visio si besoin.
+              </p>
+              <ul class="list" style="margin-top:10px;">
+                <li>Durée : 45–60 min</li>
+                <li>Conseils goûts + usages (chaud / glacé)</li>
+                <li>Commandes si vous le souhaitez, sans pression</li>
+              </ul>
+              <div class="ctaRow">
+                <a class="btn primary" href="#contact"><span>Organiser un atelier</span><span aria-hidden="true">→</span></a>
+                <a class="btn" href="LIEN_RESERVATION" target="_blank" rel="noopener"><span>Réserver un créneau</span><span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
           </div>
-          <div class="infoCard">
-            <div class="k">Au programme</div>
-            <p class="v">Sélection adaptée, dégustation, astuces (thé chaud / glacé), et associations “thé + bijou”.</p>
-          </div>
-          <div class="infoCard">
-            <div class="k">Objectif</div>
-            <p class="v">Que chacun reparte avec son “escale” préférée — sans prise de tête, juste du plaisir.</p>
+
+          <div class="panel">
+            <div class="inner">
+              <div style="font-family:var(--serif); font-size:20px; margin:0 0 6px; letter-spacing:-.25px;">Option “Entreprise / Team”</div>
+              <p class="lead" style="margin:0;">
+                Un moment bien-être au bureau : découverte, dégustation, idées cadeaux collaborateurs.
+                Parfait pour une pause différente.
+              </p>
+              <div class="ctaRow">
+                <a class="btn" href="#contact"><span>Demander un devis</span><span aria-hidden="true">→</span></a>
+                <a class="btn" href="mailto:TONEMAIL@EXEMPLE.COM"><span>Contact mail</span><span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
     </section>
 
     <section id="contact" class="section">
       <div class="wrap">
-        <div class="sectionTitle">
+        <div class="titleRow">
           <div>
-            <h2>Commander / Me contacter</h2>
-            <div class="sub">Dis-moi ce que tu aimes et je te conseille. Réponse rapide.</div>
+            <h2>Me contacter / Commander</h2>
+            <div class="sub">Dis-moi ce que tu aimes et je te propose une sélection courte.</div>
           </div>
         </div>
 
         <div class="contactGrid">
-          <div class="infoCard">
-            <div class="k">Message rapide</div>
-            <form class="form" id="contactForm">
-              <input id="name" type="text" placeholder="Ton prénom" autocomplete="given-name" required />
-              <input id="contactField" type="text" placeholder="Ton e-mail ou ton Instagram (au choix)" required />
-              <textarea id="msg" placeholder="Ce que tu cherches : fruité / détente / digestion / cadeau / bijou… + ton budget si tu veux" required></textarea>
-              <button class="pill primary" type="submit">
-                <span>Envoyer</span><span aria-hidden="true">→</span>
-              </button>
-            </form>
-            <div class="hint">Le bouton ouvre ton appli mail avec le message pré-rempli (pas de serveur nécessaire).</div>
+          <div class="panel">
+            <div class="inner">
+              <div style="font-family:var(--serif); font-size:18px; margin:0 0 6px; letter-spacing:-.2px;">Message rapide</div>
+              <form class="form" id="contactForm">
+                <input id="name" type="text" placeholder="Ton prénom" autocomplete="given-name" required />
+                <input id="contactField" type="text" placeholder="Ton e-mail ou ton Instagram (au choix)" required />
+                <textarea id="msg" placeholder="Ex : j’aime fruité / je veux sans théine / plutôt détente le soir / budget 15–20€…" required></textarea>
+                <button class="btn primary" type="submit"><span>Envoyer</span><span aria-hidden="true">→</span></button>
+              </form>
+              <div class="note">Le bouton ouvre ton appli mail avec le message pré-rempli (pas besoin de serveur).</div>
+            </div>
           </div>
 
-          <div class="infoCard">
-            <div class="k">Autres moyens</div>
-            <p class="v">
-              Instagram : <a href="https://www.instagram.com/TON_INSTAGRAM/" target="_blank" rel="noopener">@TON_INSTAGRAM</a><br/>
-              WhatsApp : <a href="https://wa.me/33XXXXXXXXX" target="_blank" rel="noopener">+33 XX XX XX XX XX</a><br/>
-              Lien de commande : <a href="LIEN_DE_COMMANDE_ICI" target="_blank" rel="noopener">Boutique / Catalogue</a>
-            </p>
-            <div class="tinyLinks">
-              <a href="#selection">Voir la sélection</a>
-              <a href="#ateliers">Organiser un atelier</a>
-            </div>
-            <div class="hint" style="margin-top:10px;">
-              Mention : VDI indépendante — ce site présente mon activité et mes conseils.
+          <div class="panel">
+            <div class="inner">
+              <div style="font-family:var(--serif); font-size:18px; margin:0 0 6px; letter-spacing:-.2px;">Liens & infos</div>
+              <div class="sub" style="margin-bottom:10px;">
+                Remplace ces liens par ceux de ta mère (boutique/cata/insta/whatsapp).
+              </div>
+              <div class="ctaRow">
+                <a class="btn" href="https://www.instagram.com/TON_INSTAGRAM/" target="_blank" rel="noopener"><span>Instagram</span><span aria-hidden="true">↗</span></a>
+                <a class="btn" href="https://wa.me/33XXXXXXXXX" target="_blank" rel="noopener"><span>WhatsApp</span><span aria-hidden="true">↗</span></a>
+                <a class="btn" href="LIEN_BOUTIQUE_OU_COMMANDE" target="_blank" rel="noopener"><span>Boutique</span><span aria-hidden="true">↗</span></a>
+                <a class="btn" href="LIEN_CATALOGUE" target="_blank" rel="noopener"><span>Catalogue</span><span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="note">
+                VDI indépendante — conseils & accompagnement. Commandes via liens officiels.
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
     <footer class="footer">
       <div class="wrap">
-        <div>
-          © <span id="year"></span> Sylvie Materne — VDI indépendante.<br/>
-          Site vitrine personnel (non affilié officiellement). Produits disponibles via liens officiels de commande.
-        </div>
+        © <span id="year"></span> NOM MAMAN — Conseillère VDI.<br/>
+        Site vitrine personnel (non officiel). Marques et produits restent la propriété de leurs ayants droit. Les commandes se font via liens officiels.
       </div>
     </footer>
   </main>
 
   <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Détails produit">
-    <div class="modalBox">
-      <div class="modalTop">
-        <div style="color:rgba(242,244,255,.72); font-size:13px;">Détails</div>
+    <div class="mBox">
+      <div class="mTop">
+        <div style="font-size:13px;color:var(--muted)">Détails</div>
         <button class="x" id="closeModal" type="button" aria-label="Fermer">✕</button>
       </div>
-      <div class="modalContent">
-        <div class="modalMedia" id="modalMedia">
-          <div class="modalMeta" id="modalMeta"></div>
+      <div class="mContent">
+        <div class="mMedia">
+          <div class="mMeta" id="mMeta"></div>
         </div>
-        <div class="modalInfo">
-          <h3 id="modalTitle">Produit</h3>
-          <p id="modalDesc"></p>
+        <div class="mInfo">
+          <h3 id="mTitle"></h3>
+          <p id="mDesc"></p>
           <div class="ctaRow" style="margin-top:14px;">
-            <a class="pill primary" href="LIEN_DE_COMMANDE_ICI" target="_blank" rel="noopener">
-              <span>Commander</span><span aria-hidden="true">↗</span>
-            </a>
-            <a class="pill" href="#contact" onclick="document.getElementById('modal').classList.remove('open')">
-              <span>Demander conseil</span><span aria-hidden="true">→</span>
-            </a>
+            <a class="btn primary" id="mLink" href="LIEN_BOUTIQUE_OU_COMMANDE" target="_blank" rel="noopener"><span>Voir / Commander</span><span aria-hidden="true">↗</span></a>
+            <a class="btn" href="#contact" id="mAsk"><span>Me demander conseil</span><span aria-hidden="true">→</span></a>
           </div>
-          <div class="hint" style="margin-top:10px;">
-            Remplace “LIEN_DE_COMMANDE_ICI” par le lien officiel.
-          </div>
+          <div class="note">Les liens de commande doivent être ceux de ta mère (VDI).</div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    const DATA = [
+    const FAVORIS = [
       {
-        id: "t1",
-        type: "the",
-        tag: "Thé",
-        price: "à partir de 16€",
-        name: "Escale fruitée",
-        desc: "Un profil gourmand et ensoleillé, parfait pour une pause douce. Idéal aussi en version glacée.",
-        keywords: ["fruité","gourmand","glacé","été","douceur"],
-        mood: ["Fruité", "Glacé", "Coup de cœur"]
+        id:"p1",
+        name:"Le thé du globe-trotteur",
+        price:"18,00€",
+        tag:"Thé",
+        desc:"Une escale équilibrée, parfaite pour découvrir l’univers et voyager en douceur.",
+        meta:["Découverte","Évasion","Polyvalent"],
+        link:"LIEN_PRODUIT_1"
       },
       {
-        id: "t2",
-        type: "the",
-        tag: "Infusion",
-        price: "à partir de 15€",
-        name: "Pause détente",
-        desc: "Une infusion cocooning pour ralentir. Parfaite le soir ou quand tu as besoin de souffler.",
-        keywords: ["détente","soir","relax","calme","cocooning"],
-        mood: ["Détente", "Soir", "Cocooning"]
+        id:"p2",
+        name:"Cocktail de fruits",
+        price:"19,50€",
+        tag:"Infusion",
+        desc:"Fruité et généreux. Top si tu aimes les notes gourmandes, aussi bon en thé glacé.",
+        meta:["Fruité","Glacé","Gourmand"],
+        link:"LIEN_PRODUIT_2"
       },
       {
-        id: "t3",
-        type: "the",
-        tag: "Thé",
-        price: "à partir de 18€",
-        name: "Escale épicée",
-        desc: "Chaleureux, un peu voyageur : idéal quand il fait froid, ou pour les amateurs de caractère.",
-        keywords: ["épicé","hiver","caractère","chaud"],
-        mood: ["Épicé", "Hiver", "Intense"]
+        id:"p3",
+        name:"Sur une plage des Caraïbes",
+        price:"20,00€",
+        tag:"Thé",
+        desc:"Ambiance vacances : une tasse qui sent l’évasion, idéale pour changer du quotidien.",
+        meta:["Exotique","Soleil","Coup de cœur"],
+        link:"LIEN_PRODUIT_3"
       },
       {
-        id: "b1",
-        type: "bijou",
-        tag: "Bijou",
-        price: "dès 12€",
-        name: "Bracelet “souvenir”",
-        desc: "Un petit bijou qui accompagne ton quotidien : simple, lumineux, facile à offrir.",
-        keywords: ["bracelet","cadeau","simple","quotidien"],
-        mood: ["Cadeau", "Minimal", "Lumineux"]
-      },
-      {
-        id: "b2",
-        type: "bijou",
-        tag: "Bijou",
-        price: "dès 15€",
-        name: "Collier “escale”",
-        desc: "Un collier discret qui raconte une histoire — parfait pour marquer un moment ou une intention.",
-        keywords: ["collier","intention","histoire","symbolique"],
-        mood: ["Symbolique", "Discret", "Chic"]
-      },
-      {
-        id: "c1",
-        type: "cadeau",
-        tag: "Cadeau",
-        price: "pack",
-        name: "Duo “thé + bijou”",
-        desc: "Une idée cadeau prête : une escale à boire + un souvenir à porter. Je t’aide à l’associer selon la personne.",
-        keywords: ["duo","pack","cadeau","anniversaire","merci"],
-        mood: ["Cadeau", "Duo", "Prêt à offrir"]
+        id:"p4",
+        name:"Pause au Hammam",
+        price:"16,50€",
+        tag:"Infusion",
+        desc:"Une pause bien-être : douce, réconfortante, parfaite pour ralentir en fin de journée.",
+        meta:["Détente","Soir","Cocon"],
+        link:"LIEN_PRODUIT_4"
       }
     ];
 
-    const productsEl = document.getElementById("products");
-    const chips = Array.from(document.querySelectorAll(".chip"));
-    const q = document.getElementById("q");
-
-    let activeFilter = "all";
-
-    function render(){
-      const term = (q.value || "").trim().toLowerCase();
-
-      const items = DATA.filter(p => {
-        const matchFilter = (activeFilter === "all") || (p.type === activeFilter);
-        const matchSearch = !term || (
-          p.name.toLowerCase().includes(term) ||
-          p.desc.toLowerCase().includes(term) ||
-          p.keywords.join(" ").toLowerCase().includes(term)
-        );
-        return matchFilter && matchSearch;
-      });
-
-      productsEl.innerHTML = items.map(p => `
-        <article class="product" data-id="${p.id}" tabindex="0" role="button" aria-label="Voir ${escapeHtml(p.name)}">
-          <div class="ph">
-            <span class="tag">${escapeHtml(p.tag)}</span>
-            <span class="price">${escapeHtml(p.price)}</span>
-          </div>
-          <div class="pbody">
-            <h3 class="pname">${escapeHtml(p.name)}</h3>
-            <p class="pdesc">${escapeHtml(p.desc)}</p>
-          </div>
-        </article>
-      `).join("");
-
-      Array.from(productsEl.querySelectorAll(".product")).forEach(card => {
-        card.addEventListener("click", () => openModal(card.getAttribute("data-id")));
-        card.addEventListener("keydown", (e) => {
-          if(e.key === "Enter" || e.key === " "){
-            e.preventDefault();
-            openModal(card.getAttribute("data-id"));
-          }
-        });
-      });
-    }
-
-    function setFilter(v){
-      activeFilter = v;
-      chips.forEach(c => c.classList.toggle("active", c.dataset.filter === v));
-      render();
-    }
-
-    chips.forEach(c => c.addEventListener("click", () => setFilter(c.dataset.filter)));
-    q.addEventListener("input", render);
-
+    const grid = document.getElementById("prodGrid");
     const modal = document.getElementById("modal");
-    const closeModalBtn = document.getElementById("closeModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalDesc = document.getElementById("modalDesc");
-    const modalMeta = document.getElementById("modalMeta");
+    const closeModal = document.getElementById("closeModal");
+    const mTitle = document.getElementById("mTitle");
+    const mDesc = document.getElementById("mDesc");
+    const mMeta = document.getElementById("mMeta");
+    const mLink = document.getElementById("mLink");
 
-    function openModal(id){
-      const p = DATA.find(x => x.id === id);
-      if(!p) return;
-      modalTitle.textContent = p.name;
-      modalDesc.textContent = p.desc;
-      modalMeta.innerHTML = (p.mood || []).map(m => `<span class="miniPill">${escapeHtml(m)}</span>`).join("");
-      modal.classList.add("open");
-    }
-    function closeModal(){
-      modal.classList.remove("open");
-    }
-
-    modal.addEventListener("click", (e) => { if(e.target === modal) closeModal(); });
-    closeModalBtn.addEventListener("click", closeModal);
-    document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeModal(); });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const contact = document.getElementById("contactField").value.trim();
-      const msg = document.getElementById("msg").value.trim();
-
-      const subject = encodeURIComponent("Demande — Thés / Bijoux");
-      const body = encodeURIComponent(
-        `Bonjour,\n\nJe m'appelle ${name}.\nContact: ${contact}\n\nMessage:\n${msg}\n\nMerci !`
-      );
-
-      const to = "TONEMAIL@EXEMPLE.COM";
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    });
-
-    function escapeHtml(str){
-      return String(str)
+    function esc(s){
+      return String(s)
         .replaceAll("&","&amp;")
         .replaceAll("<","&lt;")
         .replaceAll(">","&gt;")
         .replaceAll('"',"&quot;")
         .replaceAll("'","&#039;");
     }
+
+    function render(){
+      grid.innerHTML = FAVORIS.map(p => `
+        <article class="prod" data-id="${esc(p.id)}" tabindex="0" role="button" aria-label="Voir ${esc(p.name)}">
+          <div class="ph">
+            <span class="tag">${esc(p.tag)}</span>
+            <span class="price">${esc(p.price)}</span>
+          </div>
+          <div class="pb">
+            <h3 class="pn">${esc(p.name)}</h3>
+            <p class="pd">${esc(p.desc)}</p>
+          </div>
+        </article>
+      `).join("");
+
+      [...grid.querySelectorAll(".prod")].forEach(el=>{
+        el.addEventListener("click", ()=>open(el.dataset.id));
+        el.addEventListener("keydown", (e)=>{
+          if(e.key==="Enter" || e.key===" "){ e.preventDefault(); open(el.dataset.id); }
+        });
+      });
+    }
+
+    function open(id){
+      const p = FAVORIS.find(x=>x.id===id);
+      if(!p) return;
+      mTitle.textContent = p.name;
+      mDesc.textContent = p.desc;
+      mMeta.innerHTML = (p.meta||[]).map(t=>`<span class="miniPill">${esc(t)}</span>`).join("");
+      mLink.href = p.link && p.link !== "LIEN_PRODUIT_"+id ? p.link : "LIEN_BOUTIQUE_OU_COMMANDE";
+      modal.classList.add("open");
+    }
+
+    function close(){
+      modal.classList.remove("open");
+    }
+
+    modal.addEventListener("click", (e)=>{ if(e.target===modal) close(); });
+    closeModal.addEventListener("click", close);
+    document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") close(); });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const contact = document.getElementById("contactField").value.trim();
+      const msg = document.getElementById("msg").value.trim();
+      const subject = encodeURIComponent("Demande — Thés / Infusions / Bijoux");
+      const body = encodeURIComponent(
+        `Bonjour,\n\nJe m'appelle ${name}.\nContact: ${contact}\n\nMessage:\n${msg}\n\nMerci !`
+      );
+      const to = "TONEMAIL@EXEMPLE.COM";
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
 
     render();
   </script>
