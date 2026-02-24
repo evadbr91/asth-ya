@@ -1,95 +1,138 @@
-// Year
-document.querySelectorAll("#year").forEach(el => {
-  el.textContent = new Date().getFullYear();
-});
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Best sellers • Sylvie Materne — Conseillère VDI</title>
+  <meta name="description" content="Best sellers thés & infusions : descriptions & idées. Commande via Sylvie Materne (VDI)." />
+  <meta name="theme-color" content="#2f5b4a" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
 
-// Mobile nav
-const burger = document.getElementById("burger");
-const mobileNav = document.getElementById("mobileNav");
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__row">
+      <a class="brand" href="index.html" aria-label="Retour accueil">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <strong>Best sellers</strong>
+          <em>Sylvie Materne • VDI</em>
+        </span>
+      </a>
 
-if (burger && mobileNav) {
-  burger.addEventListener("click", () => {
-    const expanded = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!expanded));
-    mobileNav.hidden = expanded;
-  });
-}
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html#univers">Univers</a>
+        <a href="index.html#ateliers">Ateliers</a>
+        <a href="index.html#contact">Commander</a>
+      </nav>
 
-// Reveal on scroll
-const reveals = Array.from(document.querySelectorAll(".reveal"));
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) e.target.classList.add("is-visible");
-  });
-}, { threshold: 0.12 });
+      <div class="topbar__cta">
+        <a class="btn btn--ghost" href="index.html">Accueil</a>
+        <a class="btn btn--primary" href="index.html#contact">Commander <span aria-hidden="true">→</span></a>
+      </div>
 
-reveals.forEach(el => io.observe(el));
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-// Contact form (mailto)
-const form = document.getElementById("contactForm");
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = (document.getElementById("name")?.value || "").trim();
-    const who  = (document.getElementById("who")?.value || "").trim();
-    const msg  = (document.getElementById("msg")?.value || "").trim();
+    <div class="mobile" id="mobileNav" hidden>
+      <div class="wrap mobile__inner">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#univers">Univers</a>
+        <a href="index.html#ateliers">Ateliers</a>
+        <a href="index.html#contact">Commander</a>
+      </div>
+    </div>
+  </header>
 
-    const subject = encodeURIComponent("Demande — Thés / Infusions / Bijoux");
-    const body = encodeURIComponent(
-      `Bonjour Sylvie,\n\nJe m'appelle ${name}.\nContact: ${who}\n\nMessage:\n${msg}\n\nMerci !`
-    );
+  <main>
+    <section class="hero hero--small">
+      <div class="wrap hero__grid hero__grid--single">
+        <div class="hero__copy reveal">
+          <h1>Best sellers</h1>
+          <p class="lead">
+            Pour l’instant : placeholders. Plus tard : tu remplaces par photos + vrais noms + prix.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="index.html#contact">Me demander conseil <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="https://wa.me/33661082001" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="wave" aria-hidden="true"></div>
+    </section>
 
-    window.location.href = `mailto:sylvie.breu@laposte.net?subject=${subject}&body=${body}`;
-  });
-}
+    <section class="section">
+      <div class="wrap">
+        <div class="grid3 reveal">
+          <article class="bs" id="p1">
+            <div class="ph ph--bs ph--a"></div>
+            <div class="bs__body">
+              <h2>Escale fruitée</h2>
+              <p>Notes fruitées, super en thé glacé. Idéal “soleil”.</p>
+              <div class="chips"><span>Fruité</span><span>Glacé</span><span>Découverte</span></div>
+              <div class="ctaRow">
+                <a class="btn btn--primary" href="index.html#contact">Commander</a>
+                <a class="btn btn--ghost" href="https://wa.me/33661082001" target="_blank" rel="noopener">WhatsApp</a>
+              </div>
+            </div>
+          </article>
 
-// Carousel
-const carousel = document.querySelector("[data-carousel]");
-if (carousel) {
-  const track = carousel.querySelector("[data-track]");
-  const prev = carousel.querySelector("[data-prev]");
-  const next = carousel.querySelector("[data-next]");
-  const dotsWrap = document.querySelector("[data-dots]");
-  const slides = track ? Array.from(track.children) : [];
+          <article class="bs" id="p2">
+            <div class="ph ph--bs ph--b"></div>
+            <div class="bs__body">
+              <h2>Pause détente</h2>
+              <p>Pour le soir : doux, cocoon, parfait pour ralentir.</p>
+              <div class="chips"><span>Détente</span><span>Soir</span><span>Cocon</span></div>
+              <div class="ctaRow">
+                <a class="btn btn--primary" href="index.html#contact">Commander</a>
+                <a class="btn btn--ghost" href="mailto:sylvie.breu@laposte.net">Mail</a>
+              </div>
+            </div>
+          </article>
 
-  let index = 0;
+          <article class="bs" id="p3">
+            <div class="ph ph--bs ph--c"></div>
+            <div class="bs__body">
+              <h2>Escale épicée</h2>
+              <p>Chaleureux, caractère. Top en hiver.</p>
+              <div class="chips"><span>Épicé</span><span>Chaud</span><span>Intense</span></div>
+              <div class="ctaRow">
+                <a class="btn btn--primary" href="index.html#contact">Commander</a>
+                <a class="btn btn--ghost" href="tel:+33661082001">Appeler</a>
+              </div>
+            </div>
+          </article>
 
-  function goTo(i) {
-    if (!track || slides.length === 0) return;
-    index = (i + slides.length) % slides.length;
-    track.scrollTo({ left: index * track.clientWidth, behavior: "smooth" });
+          <article class="bs" id="p4">
+            <div class="ph ph--bs ph--d"></div>
+            <div class="bs__body">
+              <h2>Exotique</h2>
+              <p>Ambiance vacances : parfum dépaysant et gourmand.</p>
+              <div class="chips"><span>Exotique</span><span>Soleil</span><span>Coup de cœur</span></div>
+              <div class="ctaRow">
+                <a class="btn btn--primary" href="index.html#contact">Commander</a>
+                <a class="btn btn--ghost" href="index.html#ateliers">Atelier</a>
+              </div>
+            </div>
+          </article>
+        </div>
 
-    if (dotsWrap) {
-      dotsWrap.querySelectorAll("button").forEach((b, idx) => {
-        b.classList.toggle("active", idx === index);
-      });
-    }
-  }
+        <div class="center reveal">
+          <a class="btn btn--ghost" href="index.html">← Retour accueil</a>
+          <a class="btn btn--primary" href="index.html#contact">Commander</a>
+        </div>
+      </div>
+    </section>
 
-  if (dotsWrap && slides.length) {
-    dotsWrap.innerHTML = slides.map((_, i) => (
-      `<button type="button" aria-label="Aller au slide ${i+1}"></button>`
-    )).join("");
+    <footer class="footer">
+      <div class="wrap">
+        © <span id="year"></span> Sylvie Materne — Conseillère VDI.
+      </div>
+    </footer>
+  </main>
 
-    dotsWrap.querySelectorAll("button").forEach((btn, i) => {
-      btn.addEventListener("click", () => goTo(i));
-    });
-
-    dotsWrap.querySelectorAll("button")[0]?.classList.add("active");
-  }
-
-  prev?.addEventListener("click", () => goTo(index - 1));
-  next?.addEventListener("click", () => goTo(index + 1));
-
-  // Auto-play doux (s'arrête si l’utilisateur interagit)
-  let timer = setInterval(() => goTo(index + 1), 5500);
-
-  ["pointerdown", "touchstart", "mouseenter"].forEach((evt) => {
-    carousel.addEventListener(evt, () => {
-      if (timer) clearInterval(timer);
-      timer = null;
-    }, { once: true });
-  });
-
-  window.addEventListener("resize", () => goTo(index));
-}
+  <script src="assets/app.js"></script>
+</body>
+</html>
