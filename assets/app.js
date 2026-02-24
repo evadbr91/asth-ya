@@ -47,55 +47,91 @@ if (form) {
   });
 }
 
-// Carousel
-const carousel = document.querySelector("[data-carousel]");
-if (carousel) {
-  const track = carousel.querySelector("[data-track]");
-  const prev = carousel.querySelector("[data-prev]");
-  const next = carousel.querySelector("[data-next]");
-  const dotsWrap = document.querySelector("[data-dots]");
-  const slides = track ? Array.from(track.children) : [];
+/* =========================
+   Carousel (FIX)
+   Compatible avec le HTML que je t’ai donné :
+   - .carousel__track
+   - .slide
+   - [data-dots]
+   ========================= */
+(function () {
+  const carousels = document.querySelectorAll("[data-carousel]");
+  if (!carousels.length) return;
 
-  let index = 0;
+  carousels.forEach((carousel) => {
+    const track = carousel.querySelector(".carousel__track");
+    const slides = track ? Array.from(track.querySelectorAll(".slide")) : [];
+    const prev = carousel.querySelector("[data-prev]");
+    const next = carousel.querySelector("[data-next]");
+    const dotsWrap = document.querySelector("[data-dots]");
 
-  function goTo(i) {
     if (!track || slides.length === 0) return;
-    index = (i + slides.length) % slides.length;
 
-    const w = track.clientWidth;
-    track.scrollTo({ left: index * w, behavior: "smooth" });
+    const getGap = () => {
+      const styles = window.getComputedStyle(track);
+      const gap = parseFloat(styles.gap || styles.columnGap || "0");
+      return Number.isFinite(gap) ? gap : 0;
+    };
 
+    const getSlideWidth = () => {
+      const w = slides[0].getBoundingClientRect().width;
+      return w + getGap();
+    };
+
+    const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+
+    const getIndex = () => {
+      const w = getSlideWidth();
+      if (!w) return 0;
+      return clamp(Math.round(track.scrollLeft / w), 0, slides.length - 1);
+    };
+
+    const setActiveDot = (i) => {
+      if (!dotsWrap) return;
+      const dots = Array.from(dotsWrap.querySelectorAll("button"));
+      dots.forEach((d, idx) => d.setAttribute("aria-current", idx === i ? "true" : "false"));
+    };
+
+    const scrollToIndex = (i) => {
+      const w = getSlideWidth();
+      const idx = clamp(i, 0, slides.length - 1);
+      track.scrollTo({ left: idx * w, behavior: "smooth" });
+      setActiveDot(idx);
+    };
+
+    // Dots
     if (dotsWrap) {
-      dotsWrap.querySelectorAll("button").forEach((b, idx) => {
-        b.classList.toggle("active", idx === index);
+      dotsWrap.innerHTML = slides
+        .map(
+          (_, i) =>
+            `<button type="button" aria-label="Aller à la slide ${i + 1}" aria-current="${
+              i === 0 ? "true" : "false"
+            }"></button>`
+        )
+        .join("");
+
+      Array.from(dotsWrap.querySelectorAll("button")).forEach((btn, i) => {
+        btn.addEventListener("click", () => scrollToIndex(i));
       });
     }
-  }
 
-  if (dotsWrap && slides.length) {
-    dotsWrap.innerHTML = slides
-      .map((_, i) => `<button type="button" aria-label="Aller au slide ${i + 1}"></button>`)
-      .join("");
+    // Buttons
+    prev?.addEventListener("click", () => scrollToIndex(getIndex() - 1));
+    next?.addEventListener("click", () => scrollToIndex(getIndex() + 1));
 
-    dotsWrap.querySelectorAll("button").forEach((btn, i) => {
-      btn.addEventListener("click", () => goTo(i));
-    });
-
-    dotsWrap.querySelectorAll("button")[0]?.classList.add("active");
-  }
-
-  prev?.addEventListener("click", () => goTo(index - 1));
-  next?.addEventListener("click", () => goTo(index + 1));
-
-  let timer = setInterval(() => goTo(index + 1), 5500);
-  ["pointerdown", "touchstart", "mouseenter"].forEach((evt) => {
-    carousel.addEventListener(
-      evt,
-      () => { if (timer) clearInterval(timer); timer = null; },
-      { once: true }
+    // Keep dots in sync on manual scroll
+    track.addEventListener(
+      "scroll",
+      () => {
+        setActiveDot(getIndex());
+      },
+      { passive: true }
     );
-  });
 
-  window.addEventListener("resize", () => goTo(index));
-  goTo(0);
-}
+    // Recalc on resize
+    window.addEventListener("resize", () => scrollToIndex(getIndex()));
+
+    // Init
+    scrollToIndex(0);
+  });
+})();
