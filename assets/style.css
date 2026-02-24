@@ -428,3 +428,85 @@ textarea{min-height: 110px; resize: vertical}
 .product--card .product__body{
   padding: 14px;
 }
+/* =========================
+   RESPONSIVE (mobile first)
+   Colle tout en bas
+   ========================= */
+
+/* Sécurités globales */
+.wrap{ width: min(var(--wrap), calc(100% - 28px)); }
+img{ max-width:100%; height:auto; }
+.hero__actions .btn{ white-space: nowrap; }
+
+/* Header: évite que ça déborde sur petits écrans */
+.topbar__row{ gap: 12px; }
+.brand{ min-width: 0; }
+.brand__text em{ display:none; } /* sur mobile, on cache la 2e ligne */
+@media (min-width: 520px){
+  .brand__text em{ display:block; }
+}
+
+/* Menu mobile: plein écran propre */
+.mobile{ box-shadow: 0 20px 60px rgba(0,0,0,.10); }
+.mobile__inner a{ font-size: 15px; }
+.mobile__cta .btn{ width: 100%; }
+
+/* Hero: spacing mobile */
+.hero{ padding: 22px 0 8px; }
+.heroBanner img{ height: clamp(180px, 34vw, 320px); }
+.miniRow{ flex-direction: column; }
+.miniPill{ width: 100%; }
+
+/* Grilles: 1 colonne sur tel */
+.grid4, .grid3, .grid2{ grid-template-columns: 1fr; }
+
+/* Cards “Best sellers” (avec images) : toujours propre */
+.product--card{ width: 100%; }
+.product--card .product__body{ padding: 12px 14px; }
+
+/* Carrousel: plus agréable sur mobile */
+.carousel{
+  grid-template-columns: auto 1fr auto;
+  gap: 8px;
+}
+.carousel__btn{
+  width: 40px;
+  height: 40px;
+}
+.slide{
+  flex-basis: 86%; /* sur mobile on voit mieux la photo */
+}
+@media (min-width: 520px){
+  .slide{ flex-basis: 74%; }
+}
+@media (min-width: 900px){
+  .slide{ flex-basis: 32%; }
+}
+
+/* Contact: 1 colonne sur mobile */
+.contactLines .line{
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contactLines .line b{ word-break: break-word; }
+
+/* Boutons: évite débordement */
+.btn{ max-width: 100%; }
+.hero__actions, .ctaRow{ flex-direction: column; align-items: stretch; }
+.hero__actions .btn, .ctaRow .btn{ width: 100%; }
+
+/* Tablettes + desktop: nav visible et menu burger caché (déjà dans ton CSS, on sécurise) */
+@media (min-width: 980px){
+  .wrap{ width:min(var(--wrap), calc(100% - 40px)); }
+  .nav{ display:flex; }
+  .topbar__cta{ display:flex; }
+  .burger{ display:none; }
+  .mobile{ display:none !important; }
+
+  .grid4{ grid-template-columns: repeat(4, 1fr); }
+  .grid3{ grid-template-columns: repeat(3, 1fr); }
+  .grid2{ grid-template-columns: repeat(2, 1fr); }
+
+  .hero__actions{ flex-direction: row; align-items: center; }
+  .hero__actions .btn{ width: auto; }
+}
