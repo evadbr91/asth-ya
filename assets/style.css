@@ -411,3 +411,20 @@ textarea{min-height: 110px; resize: vertical}
   .grid3{grid-template-columns: repeat(3, 1fr)}
   .grid2{grid-template-columns: repeat(2, 1fr)}
 }
+/* ===== Best sellers images ===== */
+
+.product--card{
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.imgBest{
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.product--card .product__body{
+  padding: 14px;
+}
