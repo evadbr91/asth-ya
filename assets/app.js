@@ -88,14 +88,10 @@ if (carousel) {
   next?.addEventListener("click", () => goTo(index + 1));
 
   let timer = setInterval(() => goTo(index + 1), 5500);
-
   ["pointerdown", "touchstart", "mouseenter"].forEach((evt) => {
     carousel.addEventListener(
       evt,
-      () => {
-        if (timer) clearInterval(timer);
-        timer = null;
-      },
+      () => { if (timer) clearInterval(timer); timer = null; },
       { once: true }
     );
   });
