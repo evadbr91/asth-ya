@@ -327,77 +327,75 @@ h2{font-family:var(--serif); font-size:26px; margin:0; letter-spacing:-.35px;}
 .line span{color:var(--muted); font-size:12px}
 .line b{font-size:13px}
 
-/* Carousel */
-.carousel{
-  position:relative;
-  border-radius: var(--r2);
-  overflow:hidden;
-  border:1px solid rgba(31,43,37,.10);
-  background: rgba(255,255,255,.92);
-  box-shadow: var(--shadow);
-}
-.carousel__track{display:flex; overflow:hidden; scroll-behavior:smooth;}
-.slide{min-width:100%; position:relative;}
-.slide__cap{
-  position:absolute; left:14px; bottom:14px;
-  padding:10px 12px;
-  border-radius: 16px;
-  background: rgba(255,255,255,.92);
-  border:1px solid rgba(31,43,37,.10);
-  box-shadow: var(--shadow2);
-}
-.slide__cap strong{display:block; font-size:13px;}
-.slide__cap span{display:block; font-size:12px; color:var(--muted); margin-top:2px;}
-.carousel__btn{
-  position:absolute; top:50%; transform: translateY(-50%);
-  width:44px; height:44px; border-radius:16px;
-  border:1px solid rgba(31,43,37,.12);
-  background: rgba(255,255,255,.95);
-  box-shadow: var(--shadow2);
-  cursor:pointer; z-index:2;
-  font-size:26px; line-height:0;
-}
-.carousel__btn[data-prev]{left:10px;}
-.carousel__btn[data-next]{right:10px;}
+/* ===== CAROUSEL 4:5 ===== */
 
-.carouselDots{display:flex; gap:8px; justify-content:center; margin-top:10px;}
-.carouselDots button{
-  width:10px; height:10px; border-radius:999px;
-  border:1px solid rgba(31,43,37,.18);
-  background: rgba(31,43,37,.12);
-  cursor:pointer;
-}
-.carouselDots button.active{
-  background: linear-gradient(135deg, var(--green), var(--green2));
-  border-color: rgba(47,91,74,.22);
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-/* Best-sellers cards */
-.bs{
-  border-radius: var(--r2);
-  overflow:hidden;
-  background: rgba(255,255,255,.92);
-  border:1px solid rgba(31,43,37,.10);
-  box-shadow: var(--shadow2);
-}
-.ph--bs{height:190px; border-radius:0; border:none; box-shadow:none;}
-.bs__body{padding:14px 14px 16px;}
-.bs__body h3{margin:0 0 6px; font-family:var(--serif); font-size:20px;}
-.bs__body p{margin:0; color:var(--muted); line-height:1.6; font-size:14px;}
-.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
-.chips span{
-  padding:8px 10px; border-radius:999px;
-  border:1px solid rgba(31,43,37,.12);
-  background: rgba(255,255,255,.92);
-  font-size:12px; color: var(--muted);
+.carousel__viewport {
+  overflow: hidden;
+  width: 100%;
 }
 
-.footerNote{
-  margin-top:16px;
-  padding-top:16px;
-  border-top:1px solid rgba(31,43,37,.10);
-  color: rgba(94,109,101,.92);
-  font-size:12px;
+.carousel__track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 320px; /* largeur fixe propre */
+}
+
+.imgSlide {
+  width: 100%;
+  aspect-ratio: 4 / 5;   /* respect 1200x1500 */
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
+/* Desktop un peu plus grand */
+@media (min-width: 900px) {
+  .slide {
+    width: 380px;
+  }
+}
+
+/* Boutons */
+.carousel__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  cursor: pointer;
+}
+
+/* Dots */
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.carouselDots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.3);
+}
+
+.carouselDots button[aria-current="true"] {
+  background: white;
 }
 
 /* Placeholders */
