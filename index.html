@@ -3,908 +3,364 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Thés & Infusions • Asthéya — Conseillère VDI | NOM MAMAN</title>
-  <meta name="description" content="Thés & infusions Asthéya : évasion & bien-être. Conseils personnalisés, ateliers à domicile, commandes via votre conseillère VDI." />
+  <title>Sylvie Materne • Conseillère VDI — Thés, infusions & bijoux</title>
+  <meta name="description" content="Thés & infusions esprit voyage + idées cadeaux bijoux. Conseils personnalisés, ateliers à domicile et commandes via votre conseillère VDI Sylvie Materne." />
   <meta name="theme-color" content="#2f5b4a" />
-  <style>
-    :root{
-      --bg:#fbfaf6;
-      --bg2:#f4f1e8;
-      --card:#ffffff;
-      --ink:#1f2b25;
-      --muted:#5e6d65;
-      --line:rgba(31,43,37,.10);
-      --shadow: 0 14px 40px rgba(31,43,37,.10);
-      --shadow2: 0 10px 26px rgba(31,43,37,.08);
-
-      --green:#2f5b4a;
-      --green2:#3f7a62;
-      --sage:#a9b9ad;
-      --sand:#d7c6a4;
-      --gold:#c6a45b;
-
-      --r:18px;
-      --r2:26px;
-      --max:1120px;
-
-      --serif: ui-serif, Georgia, "Times New Roman", Times, serif;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--ink);
-      background:
-        radial-gradient(1200px 650px at 12% 10%, rgba(47,91,74,.10), transparent 55%),
-        radial-gradient(950px 580px at 90% 20%, rgba(198,164,91,.10), transparent 55%),
-        radial-gradient(900px 600px at 55% 95%, rgba(169,185,173,.18), transparent 55%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(var(--max), calc(100% - 44px)); margin:0 auto;}
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(251,250,246,.72);
-      border-bottom:1px solid var(--line);
-    }
-    .toprow{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 240px;
-    }
-    .mark{
-      width:42px; height:42px; border-radius:14px;
-      background:
-        radial-gradient(14px 14px at 28% 28%, rgba(255,255,255,.85), transparent 55%),
-        linear-gradient(135deg, var(--green), var(--green2));
-      box-shadow: 0 14px 30px rgba(47,91,74,.18);
-      border: 1px solid rgba(47,91,74,.18);
-      position:relative;
-    }
-    .mark:after{
-      content:"";
-      position:absolute; inset:10px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.55);
-      opacity:.85;
-    }
-    .brand strong{display:block; font-size:13px; letter-spacing:.2px}
-    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
-    nav{
-      display:flex; gap:14px; align-items:center;
-    }
-    .navlink{
-      font-size:13px; color:var(--muted);
-      padding:10px 10px;
-      border-radius:999px;
-      border:1px solid transparent;
-      transition: .18s ease;
-    }
-    .navlink:hover{
-      color:var(--ink);
-      background: rgba(47,91,74,.06);
-      border-color: rgba(47,91,74,.10);
-    }
-    .actions{display:flex; gap:10px; align-items:center;}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:11px 14px;
-      border-radius:999px;
-      border:1px solid rgba(31,43,37,.14);
-      background: rgba(255,255,255,.70);
-      box-shadow: var(--shadow2);
-      font-size:13px;
-      cursor:pointer;
-      transition: transform .14s ease, background .18s ease, border-color .18s ease;
-      user-select:none;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.90);
-      border-color: rgba(31,43,37,.18);
-    }
-    .btn.primary{
-      background: linear-gradient(135deg, var(--green), var(--green2));
-      border-color: rgba(47,91,74,.22);
-      color:#fff;
-    }
-    .btn.primary:hover{transform: translateY(-2px);}
-    .dot{
-      width:8px;height:8px;border-radius:999px;background:var(--gold);
-      box-shadow: 0 0 0 4px rgba(198,164,91,.18);
-    }
-    @media (max-width: 980px){
-      nav{display:none;}
-      .brand{min-width:auto;}
-    }
-
-    .hero{padding:48px 0 22px;}
-    .gridHero{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:18px;
-      align-items:stretch;
-    }
-    @media (max-width: 980px){
-      .gridHero{grid-template-columns:1fr;}
-    }
-
-    .panel{
-      border-radius: var(--r2);
-      background: rgba(255,255,255,.72);
-      border:1px solid rgba(31,43,37,.10);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .panel:before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(650px 240px at 12% 18%, rgba(47,91,74,.10), transparent 60%),
-        radial-gradient(520px 220px at 90% 35%, rgba(198,164,91,.10), transparent 60%),
-        radial-gradient(520px 240px at 42% 110%, rgba(169,185,173,.22), transparent 62%);
-      pointer-events:none;
-    }
-    .inner{position:relative; padding:24px;}
-    .kicker{
-      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
-    }
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      border:1px solid rgba(31,43,37,.12);
-      background: rgba(255,255,255,.66);
-      color:var(--muted);
-      font-size:12px;
-    }
-    .pill i{
-      width:8px;height:8px;border-radius:999px;background:var(--green2);
-      display:inline-block;
-    }
-    h1{
-      font-family:var(--serif);
-      font-weight:700;
-      font-size:46px;
-      line-height:1.05;
-      margin:14px 0 10px;
-      letter-spacing:-.6px;
-    }
-    @media (max-width:520px){h1{font-size:38px}}
-    .lead{
-      margin:0 0 14px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.65;
-      max-width: 68ch;
-    }
-    .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;}
-    .small{
-      margin-top:12px;
-      color: rgba(94,109,101,.85);
-      font-size:12px;
-      line-height:1.5;
-    }
-
-    .sideTop{
-      display:grid;
-      gap:12px;
-    }
-    .poster{
-      border-radius: var(--r2);
-      background:
-        radial-gradient(900px 320px at 15% 25%, rgba(47,91,74,.14), transparent 60%),
-        radial-gradient(760px 320px at 92% 35%, rgba(198,164,91,.14), transparent 60%),
-        linear-gradient(135deg, rgba(255,255,255,.70), rgba(255,255,255,.52));
-      border:1px solid rgba(31,43,37,.10);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-      position:relative;
-      padding:18px;
-      min-height: 190px;
-    }
-    .posterTitle{
-      font-family:var(--serif);
-      font-size:20px;
-      margin:0 0 6px;
-      letter-spacing:-.3px;
-    }
-    .posterText{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.55;
-      max-width: 52ch;
-    }
-    .stats{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    .stat{
-      border-radius: 20px;
-      background: rgba(255,255,255,.72);
-      border:1px solid rgba(31,43,37,.10);
-      box-shadow: var(--shadow2);
-      padding:14px;
-    }
-    .stat b{display:block; font-size:14px}
-    .stat span{display:block; margin-top:4px; font-size:12px; color:var(--muted); line-height:1.4}
-
-    .section{padding:28px 0;}
-    .titleRow{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:14px;
-      margin-bottom:12px;
-    }
-    h2{
-      font-family:var(--serif);
-      font-size:26px;
-      letter-spacing:-.35px;
-      margin:0;
-    }
-    .sub{color:var(--muted); font-size:13px; line-height:1.5}
-    .grid2{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:14px;
-      align-items:start;
-    }
-    @media (max-width: 980px){
-      .grid2{grid-template-columns:1fr;}
-      .stats{grid-template-columns:1fr;}
-    }
-
-    .list{
-      margin:0; padding-left: 18px;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:14px;
-    }
-    .list li{margin:6px 0}
-    .callouts{
-      display:grid;
-      gap:12px;
-    }
-    .box{
-      border-radius: var(--r2);
-      background: rgba(255,255,255,.72);
-      border:1px solid rgba(31,43,37,.10);
-      box-shadow: var(--shadow2);
-      padding:16px;
-    }
-    .box h3{
-      margin:0 0 6px;
-      font-family:var(--serif);
-      font-size:18px;
-      letter-spacing:-.25px;
-    }
-    .box p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
-
-    .prodGrid{
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap:14px;
-    }
-    @media (max-width: 1100px){ .prodGrid{grid-template-columns:repeat(2,1fr);} }
-    @media (max-width: 560px){ .prodGrid{grid-template-columns:1fr;} }
-
-    .prod{
-      border-radius: var(--r2);
-      background: rgba(255,255,255,.78);
-      border:1px solid rgba(31,43,37,.10);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-      cursor:pointer;
-      transition: transform .14s ease, box-shadow .18s ease, border-color .18s ease;
-    }
-    .prod:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 18px 46px rgba(31,43,37,.12);
-      border-color: rgba(47,91,74,.18);
-    }
-    .ph{
-      height:132px;
-      background:
-        radial-gradient(520px 220px at 18% 20%, rgba(47,91,74,.12), transparent 60%),
-        radial-gradient(520px 220px at 90% 30%, rgba(198,164,91,.14), transparent 60%),
-        linear-gradient(135deg, rgba(244,241,232,.9), rgba(255,255,255,.92));
-      border-bottom:1px solid rgba(31,43,37,.10);
-      position:relative;
-      padding:14px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:10px;
-    }
-    .tag{
-      font-size:12px;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(31,43,37,.12);
-      background: rgba(255,255,255,.75);
-      color: var(--muted);
-    }
-    .price{
-      font-size:12px;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(31,43,37,.12);
-      background: rgba(255,255,255,.75);
-      color: var(--ink);
-    }
-    .pb{padding:14px 14px 16px;}
-    .pn{margin:0; font-size:15px; letter-spacing:-.1px}
-    .pd{margin:7px 0 0; color:var(--muted); font-size:13px; line-height:1.45}
-
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-    }
-    @media (max-width: 980px){ .split{grid-template-columns:1fr;} }
-
-    .note{
-      font-size:12px;
-      color: rgba(94,109,101,.9);
-      line-height:1.55;
-      margin-top:10px;
-    }
-
-    .contactGrid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:14px;
-    }
-    @media (max-width: 980px){ .contactGrid{grid-template-columns:1fr;} }
-
-    .form{
-      display:grid;
-      gap:10px;
-      margin-top:10px;
-    }
-    .form input,.form textarea{
-      width:100%;
-      padding:12px 14px;
-      border-radius: 16px;
-      border:1px solid rgba(31,43,37,.12);
-      background: rgba(255,255,255,.78);
-      color:var(--ink);
-      outline:none;
-      font-size:14px;
-    }
-    .form textarea{min-height: 120px; resize: vertical;}
-    .footer{
-      padding:28px 0 44px;
-      border-top:1px solid var(--line);
-      color: rgba(94,109,101,.92);
-      font-size:12px;
-      line-height:1.6;
-    }
-    .footer a{text-decoration:underline; text-decoration-color: rgba(31,43,37,.20);}
-
-    .modal{
-      position:fixed; inset:0;
-      display:none; align-items:center; justify-content:center;
-      padding:22px;
-      background: rgba(16,22,19,.46);
-      z-index:90;
-    }
-    .modal.open{display:flex;}
-    .mBox{
-      width:min(900px, 100%);
-      border-radius: 28px;
-      background: rgba(255,255,255,.96);
-      border:1px solid rgba(31,43,37,.12);
-      box-shadow: 0 30px 90px rgba(31,43,37,.22);
-      overflow:hidden;
-    }
-    .mTop{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 14px;
-      border-bottom:1px solid rgba(31,43,37,.10);
-      background: rgba(244,241,232,.55);
-    }
-    .x{
-      width:42px; height:42px;
-      border-radius: 16px;
-      border:1px solid rgba(31,43,37,.12);
-      background: rgba(255,255,255,.85);
-      cursor:pointer;
-      font-size:16px;
-    }
-    .x:hover{background:#fff;}
-    .mContent{
-      display:grid;
-      grid-template-columns: .95fr 1.05fr;
-      gap:0;
-    }
-    @media (max-width: 900px){ .mContent{grid-template-columns:1fr;} }
-    .mMedia{
-      min-height: 260px;
-      background:
-        radial-gradient(820px 280px at 18% 20%, rgba(47,91,74,.14), transparent 62%),
-        radial-gradient(720px 280px at 90% 28%, rgba(198,164,91,.16), transparent 62%),
-        linear-gradient(135deg, rgba(244,241,232,.9), rgba(255,255,255,.95));
-      border-right:1px solid rgba(31,43,37,.10);
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      gap:10px;
-    }
-    @media (max-width: 900px){ .mMedia{border-right:none;border-bottom:1px solid rgba(31,43,37,.10);} }
-    .mMeta{display:flex; flex-wrap:wrap; gap:8px;}
-    .miniPill{
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(31,43,37,.12);
-      background: rgba(255,255,255,.78);
-      font-size:12px;
-      color:var(--muted);
-    }
-    .mInfo{padding:16px 16px 18px;}
-    .mInfo h3{
-      margin:2px 0 8px;
-      font-family:var(--serif);
-      font-size:22px;
-      letter-spacing:-.3px;
-    }
-    .mInfo p{margin:0; color:var(--muted); line-height:1.6; font-size:14px;}
-  </style>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 
 <body>
   <header class="topbar">
-    <div class="wrap">
-      <div class="toprow">
-        <a class="brand" href="#top">
-          <div class="mark" aria-hidden="true"></div>
-          <div>
-            <strong>NOM MAMAN • Conseillère VDI</strong>
-            <span>Thés & infusions Asthéya • évasion & bien-être</span>
-          </div>
+    <div class="wrap topbar__row">
+      <a class="brand" href="index.html" aria-label="Accueil">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <strong>Sylvie Materne</strong>
+          <em>Conseillère VDI • Thés, infusions & bijoux</em>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#univers">Univers</a>
+        <a href="#favoris">Best sellers</a>
+        <a href="#vdi">VDI</a>
+        <a href="#ateliers">Ateliers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="topbar__cta">
+        <a class="btn btn--ghost" href="best-sellers.html">
+          Best sellers <span aria-hidden="true">→</span>
         </a>
+        <a class="btn btn--primary" href="#contact">
+          Commander <span aria-hidden="true">→</span>
+        </a>
+      </div>
 
-        <nav>
-          <a class="navlink" href="#univers">Univers</a>
-          <a class="navlink" href="#favoris">Favoris</a>
-          <a class="navlink" href="#vdi">VDI</a>
-          <a class="navlink" href="#ateliers">Ateliers</a>
-          <a class="navlink" href="#contact">Contact</a>
-        </nav>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
 
-        <div class="actions">
-          <a class="btn" href="#favoris"><span class="dot" aria-hidden="true"></span><span>Voir les favoris</span></a>
-          <a class="btn primary" href="#contact"><span>Commander</span><span aria-hidden="true">→</span></a>
+    <div class="mobile" id="mobileNav" hidden>
+      <div class="wrap mobile__inner">
+        <a href="#univers">Univers</a>
+        <a href="best-sellers.html">Best sellers</a>
+        <a href="#vdi">VDI</a>
+        <a href="#ateliers">Ateliers</a>
+        <a href="#contact">Contact</a>
+        <div class="mobile__cta">
+          <a class="btn btn--primary" href="#contact">Commander</a>
+          <a class="btn btn--ghost" href="best-sellers.html">Voir la page Best sellers</a>
         </div>
       </div>
     </div>
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
-      <div class="wrap">
-        <div class="gridHero">
-          <div class="panel">
-            <div class="inner">
-              <div class="kicker">
-                <span class="pill"><i></i> Vente à domicile</span>
-                <span class="pill"><i></i> Conseils personnalisés</span>
-                <span class="pill"><i></i> Thé + bijoux</span>
-              </div>
-
-              <h1>Vente à domicile de thés & infusions</h1>
-              <p class="lead">
-                Les arômes, les couleurs et les saveurs du thé invitent à de vrais moments d’<b>évasion</b> et de <b>bien-être</b>.
-                Ici, l’idée est simple : une tasse = une escale. Je t’aide à choisir selon tes goûts (fruité, floral, épicé, doux…)
-                et selon tes envies du moment.
-              </p>
-
-              <div class="ctaRow">
-                <a class="btn primary" href="LIEN_BOUTIQUE_OU_COMMANDE" target="_blank" rel="noopener"><span>Boutique</span><span aria-hidden="true">↗</span></a>
-                <a class="btn" href="LIEN_CATALOGUE" target="_blank" rel="noopener"><span>Catalogue</span><span aria-hidden="true">↗</span></a>
-                <a class="btn" href="https://www.instagram.com/TON_INSTAGRAM/" target="_blank" rel="noopener"><span>Instagram</span><span aria-hidden="true">↗</span></a>
-                <a class="btn" href="https://wa.me/33XXXXXXXXX" target="_blank" rel="noopener"><span>WhatsApp</span><span aria-hidden="true">↗</span></a>
-              </div>
-
-              <div class="small">
-                VDI indépendante : je conseille et j’accompagne. Les commandes se font via mes liens officiels.
-              </div>
-            </div>
+      <div class="wrap hero__grid">
+        <div class="hero__copy reveal">
+          <div class="badges">
+            <span class="badge">Vente à domicile</span>
+            <span class="badge">Conseils personnalisés</span>
+            <span class="badge">Thés + bijoux</span>
           </div>
 
-          <div class="sideTop">
-            <div class="poster">
-              <p class="posterTitle">Escale “Globe-trotter”</p>
-              <p class="posterText">
-                Une sélection inspirée du voyage : des notes qui font penser à une plage, un hammam, un jardin d’agrumes…
-                Dis-moi ce que tu aimes, je te propose 2–3 options sûres.
-              </p>
-              <div class="ctaRow" style="margin-top:12px;">
-                <a class="btn" href="#univers"><span>Découvrir l’univers</span><span aria-hidden="true">→</span></a>
-                <a class="btn" href="#ateliers"><span>Organiser un atelier</span><span aria-hidden="true">→</span></a>
-              </div>
-            </div>
+          <h1>Une tasse, une escale. <br/>Un rituel bien-être au quotidien.</h1>
 
-            <div class="stats">
-              <div class="stat">
-                <b>Conseils rapides</b>
-                <span>En message, je te guide selon tes goûts + moment de la journée.</span>
-              </div>
-              <div class="stat">
-                <b>Idées cadeaux</b>
-                <span>Thé + bijou : une attention simple et élégante à offrir.</span>
-              </div>
-            </div>
+          <p class="lead">
+            Je t’accompagne pour choisir des <b>thés & infusions</b> inspirés du voyage, et des <b>idées cadeaux bijoux</b>.
+            Dis-moi ce que tu aimes (fruité, épicé, floral, sans théine…) et je te propose une sélection simple, sûre et jolie.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="best-sellers.html">Découvrir les best sellers <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="#contact">Me demander conseil</a>
           </div>
 
+          <div class="tiny">
+            VDI indépendante — présentation & conseils. Les commandes se font via mes liens officiels.
+          </div>
         </div>
+
+        <div class="hero__media reveal">
+          <div class="hero__card">
+            <img class="hero__img" src="assets/img/hero.jpg" alt="Photo ambiance thé (à remplacer)" />
+            <div class="hero__float">
+              <div class="float__title">Escale du moment</div>
+              <div class="float__text">Fruité • Glacé • Soleil</div>
+            </div>
+          </div>
+
+          <div class="miniStats">
+            <div class="miniStat">
+              <strong>Réponse rapide</strong>
+              <span>par WhatsApp / mail</span>
+            </div>
+            <div class="miniStat">
+              <strong>Idées cadeaux</strong>
+              <span>thé + bijou</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- “Wave” déco -->
+      <div class="wave" aria-hidden="true"></div>
+    </section>
+
+    <!-- CAROUSEL -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2>Les escales qui font voyager</h2>
+          <p class="sub">Un carrousel d’ambiance (tu remplaceras les photos).</p>
+        </div>
+
+        <div class="carousel reveal" data-carousel>
+          <button class="carousel__btn" data-prev aria-label="Précédent">‹</button>
+          <div class="carousel__track" data-track>
+            <div class="slide">
+              <img src="assets/img/tea-1.jpg" alt="Thé 1 (à remplacer)" />
+              <div class="slide__cap">
+                <strong>Escale fruitée</strong><span>Parfait en glacé</span>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="assets/img/tea-2.jpg" alt="Thé 2 (à remplacer)" />
+              <div class="slide__cap">
+                <strong>Pause détente</strong><span>Soir & cocoon</span>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="assets/img/tea-3.jpg" alt="Thé 3 (à remplacer)" />
+              <div class="slide__cap">
+                <strong>Escale épicée</strong><span>Hiver & chaleur</span>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="assets/img/tea-4.jpg" alt="Thé 4 (à remplacer)" />
+              <div class="slide__cap">
+                <strong>Exotique</strong><span>Ambiance vacances</span>
+              </div>
+            </div>
+          </div>
+          <button class="carousel__btn" data-next aria-label="Suivant">›</button>
+        </div>
+
+        <div class="carouselDots" data-dots aria-hidden="true"></div>
       </div>
     </section>
 
-    <section id="univers" class="section">
+    <!-- UNIVERS -->
+    <section id="univers" class="section section--soft">
       <div class="wrap">
-        <div class="titleRow">
-          <div>
+        <div class="split">
+          <div class="reveal">
             <h2>Explorez l’univers du thé</h2>
-            <div class="sub">Une expérience “évasion & bien-être”, avec une sélection soignée.</div>
-          </div>
-        </div>
+            <p class="sub">
+              Une expérience “évasion & bien-être”, pensée pour être simple et agréable au quotidien.
+            </p>
 
-        <div class="grid2">
-          <div class="panel">
-            <div class="inner">
-              <p class="lead" style="margin-bottom:10px;">
-                Nos thés & infusions sont pensés pour te faire voyager à travers les saveurs, tout en restant simples à intégrer au quotidien.
-              </p>
+            <ul class="list">
+              <li>Profils aromatiques équilibrés (fruité, floral, épicé, gourmand…)</li>
+              <li>Conseils selon ton moment : matin / après-midi / soir</li>
+              <li>Option sans théine + recettes faciles (chaud / glacé)</li>
+              <li>Découverte en atelier à domicile (convivial, sans pression)</li>
+            </ul>
 
-              <div style="font-family:var(--serif); font-size:18px; margin:10px 0 8px; letter-spacing:-.2px;">Nos thés et infusions sont :</div>
-              <ul class="list">
-                <li>Sélectionnés selon des critères de qualité (origine, traçabilité, équilibre aromatique).</li>
-                <li>Imaginés autour d’ambiances “escales” : détente, énergie, digestion, douceur…</li>
-                <li>Assemblés par des spécialistes pour obtenir des profils réguliers et agréables en tasse.</li>
-                <li>Parfaits à découvrir en dégustation lors d’un atelier à domicile.</li>
-              </ul>
-
-              <div class="ctaRow" style="margin-top:14px;">
-                <a class="btn primary" href="LIEN_BOUTIQUE_OU_COMMANDE" target="_blank" rel="noopener"><span>Accéder à la boutique</span><span aria-hidden="true">↗</span></a>
-                <a class="btn" href="#contact"><span>Me demander conseil</span><span aria-hidden="true">→</span></a>
-              </div>
+            <div class="ctaRow">
+              <a class="btn btn--primary" href="best-sellers.html">Voir les best sellers <span aria-hidden="true">→</span></a>
+              <a class="btn btn--ghost" href="#contact">Demander une sélection</a>
             </div>
           </div>
 
-          <div class="callouts">
-            <div class="box">
+          <div class="cards reveal">
+            <div class="card">
               <h3>Ta sélection en 2 minutes</h3>
-              <p>Tu me dis : “plutôt fruité / épicé / doux / sans théine” + “matin/soir”, je te propose une escale adaptée.</p>
+              <p>Tu me dis tes goûts + ton budget, je te propose 2–3 références sûres.</p>
             </div>
-            <div class="box">
-              <h3>Bijoux (petits prix)</h3>
-              <p>Si ta mère vend aussi les bijoux : on peut proposer une idée cadeau “tasse + bijou” (pack simple).</p>
+            <div class="card">
+              <h3>Idées cadeaux bijoux</h3>
+              <p>Un duo “thé + bijou” facile à offrir : anniversaire, merci, fête…</p>
             </div>
-            <div class="box">
+            <div class="card">
               <h3>Recettes faciles</h3>
-              <p>Option : thé glacé, latte, infusion “wellness” — je te donne 1 recette simple selon le produit.</p>
+              <p>Option : thé glacé, latte, infusion wellness — je te guide simplement.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- FAVORIS -->
     <section id="favoris" class="section">
       <div class="wrap">
-        <div class="titleRow">
-          <div>
-            <h2>Vos thés & infusions favoris</h2>
-            <div class="sub">Clique pour voir le détail + quoi choisir selon ton envie.</div>
-          </div>
+        <div class="section__head reveal">
+          <h2>Best sellers</h2>
+          <p class="sub">Aperçu rapide — clique pour la page complète.</p>
         </div>
 
-        <div id="prodGrid" class="prodGrid"></div>
+        <div class="grid4 reveal">
+          <a class="product" href="best-sellers.html#p1">
+            <img src="assets/img/tea-1.jpg" alt="Best seller 1 (à remplacer)" />
+            <div class="product__body">
+              <strong>Escale fruitée</strong>
+              <span>Fruité • Glacé</span>
+            </div>
+          </a>
 
-        <div class="ctaRow" style="margin-top:14px;">
-          <a class="btn" href="LIEN_TOUTES_REFERENCES" target="_blank" rel="noopener"><span>Tous les produits</span><span aria-hidden="true">↗</span></a>
-          <a class="btn primary" href="#contact"><span>Je veux commander</span><span aria-hidden="true">→</span></a>
+          <a class="product" href="best-sellers.html#p2">
+            <img src="assets/img/tea-2.jpg" alt="Best seller 2 (à remplacer)" />
+            <div class="product__body">
+              <strong>Pause détente</strong>
+              <span>Soir • Cocon</span>
+            </div>
+          </a>
+
+          <a class="product" href="best-sellers.html#p3">
+            <img src="assets/img/tea-3.jpg" alt="Best seller 3 (à remplacer)" />
+            <div class="product__body">
+              <strong>Escale épicée</strong>
+              <span>Intense • Chaleur</span>
+            </div>
+          </a>
+
+          <a class="product" href="best-sellers.html#p4">
+            <img src="assets/img/tea-4.jpg" alt="Best seller 4 (à remplacer)" />
+            <div class="product__body">
+              <strong>Exotique</strong>
+              <span>Vacances • Soleil</span>
+            </div>
+          </a>
         </div>
 
-        <div class="note">
-          Tu peux remplacer les 4 cartes par les vrais produits (nom, prix, lien). C’est fait pour être modifiable facilement.
+        <div class="center reveal">
+          <a class="btn btn--primary" href="best-sellers.html">Voir tous les best sellers <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
 
-    <section id="vdi" class="section">
+    <!-- VDI -->
+    <section id="vdi" class="section section--soft">
       <div class="wrap">
-        <div class="titleRow">
-          <div>
-            <h2>VDI : comment je t’accompagne</h2>
-            <div class="sub">Ici, c’est pour vendre proprement : clair, simple, et ultra rassurant.</div>
-          </div>
+        <div class="section__head reveal">
+          <h2>VDI : comment je t’accompagne</h2>
+          <p class="sub">Clair, rassurant, et orienté service (ça fait vendre sans être agressif).</p>
         </div>
 
-        <div class="split">
-          <div class="panel">
-            <div class="inner">
-              <div style="font-family:var(--serif); font-size:20px; margin:0 0 6px; letter-spacing:-.25px;">Commander avec ta conseillère</div>
-              <p class="lead" style="margin:0;">
-                Tu m’écris ce que tu cherches (goût, moment, budget). Je te propose une sélection courte,
-                puis je t’envoie le lien de commande officiel et je reste dispo si tu hésites.
-              </p>
-              <div class="ctaRow">
-                <a class="btn primary" href="#contact"><span>Demander une sélection</span><span aria-hidden="true">→</span></a>
-                <a class="btn" href="https://www.instagram.com/TON_INSTAGRAM/" target="_blank" rel="noopener"><span>Me MP sur Instagram</span><span aria-hidden="true">↗</span></a>
-              </div>
+        <div class="grid2 reveal">
+          <div class="bigCard">
+            <h3>Commander avec moi</h3>
+            <p>
+              Tu m’écris : goûts + moment + budget. Je te propose une sélection courte et je t’envoie le lien officiel de commande.
+              Je reste dispo si tu hésites.
+            </p>
+            <div class="ctaRow">
+              <a class="btn btn--primary" href="#contact">Me demander une sélection</a>
+              <a class="btn btn--ghost" href="https://wa.me/33661082001" target="_blank" rel="noopener">WhatsApp</a>
             </div>
           </div>
 
-          <div class="panel">
-            <div class="inner">
-              <div style="font-family:var(--serif); font-size:20px; margin:0 0 6px; letter-spacing:-.25px;">Idées cadeaux (thé + bijou)</div>
-              <p class="lead" style="margin:0;">
-                Dis-moi pour qui (âge, style, occasion), je te propose un duo simple :
-                <b>un thé/infusion</b> + <b>un bijou</b> à petit budget.
-              </p>
-              <div class="ctaRow">
-                <a class="btn" href="#contact"><span>Créer un cadeau</span><span aria-hidden="true">→</span></a>
-                <a class="btn" href="https://wa.me/33XXXXXXXXX" target="_blank" rel="noopener"><span>WhatsApp</span><span aria-hidden="true">↗</span></a>
-              </div>
+          <div class="bigCard">
+            <h3>Idées cadeaux (thé + bijou)</h3>
+            <p>
+              Dis-moi pour qui (style, occasion, budget) : je te propose un duo simple “tasse + bijou”.
+            </p>
+            <div class="ctaRow">
+              <a class="btn btn--ghost" href="#contact">Créer un cadeau</a>
+              <a class="btn btn--ghost" href="mailto:sylvie.breu@laposte.net">Mail</a>
             </div>
           </div>
         </div>
 
-        <div class="note">
-          Mention VDI : ce site est une vitrine personnelle. Les produits et marques appartiennent à leur société d’origine.
-        </div>
+        <p class="tiny reveal">
+          Mention : VDI indépendante — ce site est une vitrine personnelle, non officiel. Les marques/produits appartiennent à leurs sociétés d’origine.
+        </p>
       </div>
     </section>
 
+    <!-- ATELIERS -->
     <section id="ateliers" class="section">
       <div class="wrap">
-        <div class="titleRow">
-          <div>
-            <h2>Découverte des thés & infusions chez vous</h2>
-            <div class="sub">Le format qui marche le mieux : convivial + dégustation + conseils.</div>
-          </div>
+        <div class="section__head reveal">
+          <h2>Ateliers & dégustations à domicile</h2>
+          <p class="sub">Le format qui convertit le mieux : convivial, découverte, sans pression.</p>
         </div>
 
-        <div class="split">
-          <div class="panel">
-            <div class="inner">
-              <div style="font-family:var(--serif); font-size:20px; margin:0 0 6px; letter-spacing:-.25px;">Atelier à domicile</div>
-              <p class="lead" style="margin:0;">
-                Tu invites 4 à 8 personnes, on goûte quelques références, et je vous aide à trouver votre “escale”.
-                Possible aussi en format visio si besoin.
-              </p>
-              <ul class="list" style="margin-top:10px;">
-                <li>Durée : 45–60 min</li>
-                <li>Conseils goûts + usages (chaud / glacé)</li>
-                <li>Commandes si vous le souhaitez, sans pression</li>
-              </ul>
-              <div class="ctaRow">
-                <a class="btn primary" href="#contact"><span>Organiser un atelier</span><span aria-hidden="true">→</span></a>
-                <a class="btn" href="LIEN_RESERVATION" target="_blank" rel="noopener"><span>Réserver un créneau</span><span aria-hidden="true">↗</span></a>
-              </div>
+        <div class="grid2 reveal">
+          <div class="bigCard">
+            <h3>Atelier chez vous</h3>
+            <p>4 à 8 personnes • 45–60 min • dégustation + conseils + commande si vous le souhaitez.</p>
+            <ul class="list">
+              <li>Choix guidé selon les goûts</li>
+              <li>Astuces “chaud / glacé”</li>
+              <li>Idées cadeaux</li>
+            </ul>
+            <div class="ctaRow">
+              <a class="btn btn--primary" href="#contact">Organiser un atelier</a>
             </div>
           </div>
 
-          <div class="panel">
-            <div class="inner">
-              <div style="font-family:var(--serif); font-size:20px; margin:0 0 6px; letter-spacing:-.25px;">Option “Entreprise / Team”</div>
-              <p class="lead" style="margin:0;">
-                Un moment bien-être au bureau : découverte, dégustation, idées cadeaux collaborateurs.
-                Parfait pour une pause différente.
-              </p>
-              <div class="ctaRow">
-                <a class="btn" href="#contact"><span>Demander un devis</span><span aria-hidden="true">→</span></a>
-                <a class="btn" href="mailto:TONEMAIL@EXEMPLE.COM"><span>Contact mail</span><span aria-hidden="true">↗</span></a>
-              </div>
+          <div class="bigCard">
+            <h3>Option entreprise</h3>
+            <p>Une pause bien-être au bureau : découverte + idées cadeaux collaborateurs.</p>
+            <div class="ctaRow">
+              <a class="btn btn--ghost" href="#contact">Demander un devis</a>
+              <a class="btn btn--ghost" href="mailto:sylvie.breu@laposte.net">Écrire un mail</a>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- CONTACT -->
+    <section id="contact" class="section section--soft">
       <div class="wrap">
-        <div class="titleRow">
-          <div>
-            <h2>Me contacter / Commander</h2>
-            <div class="sub">Dis-moi ce que tu aimes et je te propose une sélection courte.</div>
-          </div>
+        <div class="section__head reveal">
+          <h2>Contact & commandes</h2>
+          <p class="sub">Tu peux m’écrire ici : ça ouvre ton mail avec le message pré-rempli.</p>
         </div>
 
-        <div class="contactGrid">
-          <div class="panel">
-            <div class="inner">
-              <div style="font-family:var(--serif); font-size:18px; margin:0 0 6px; letter-spacing:-.2px;">Message rapide</div>
-              <form class="form" id="contactForm">
-                <input id="name" type="text" placeholder="Ton prénom" autocomplete="given-name" required />
-                <input id="contactField" type="text" placeholder="Ton e-mail ou ton Instagram (au choix)" required />
-                <textarea id="msg" placeholder="Ex : j’aime fruité / je veux sans théine / plutôt détente le soir / budget 15–20€…" required></textarea>
-                <button class="btn primary" type="submit"><span>Envoyer</span><span aria-hidden="true">→</span></button>
-              </form>
-              <div class="note">Le bouton ouvre ton appli mail avec le message pré-rempli (pas besoin de serveur).</div>
-            </div>
+        <div class="grid2 reveal">
+          <div class="bigCard">
+            <h3>Message rapide</h3>
+            <form class="form" id="contactForm">
+              <input id="name" type="text" placeholder="Ton prénom" required />
+              <input id="who" type="text" placeholder="Ton e-mail ou ton Instagram" required />
+              <textarea id="msg" placeholder="Ex : fruité / sans théine / détente le soir / budget 15–20€…" required></textarea>
+              <button class="btn btn--primary" type="submit">Envoyer <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="tiny">Mail : sylvie.breu@laposte.net • Tel : 06 61 08 20 01</p>
           </div>
 
-          <div class="panel">
-            <div class="inner">
-              <div style="font-family:var(--serif); font-size:18px; margin:0 0 6px; letter-spacing:-.2px;">Liens & infos</div>
-              <div class="sub" style="margin-bottom:10px;">
-                Remplace ces liens par ceux de ta mère (boutique/cata/insta/whatsapp).
-              </div>
-              <div class="ctaRow">
-                <a class="btn" href="https://www.instagram.com/TON_INSTAGRAM/" target="_blank" rel="noopener"><span>Instagram</span><span aria-hidden="true">↗</span></a>
-                <a class="btn" href="https://wa.me/33XXXXXXXXX" target="_blank" rel="noopener"><span>WhatsApp</span><span aria-hidden="true">↗</span></a>
-                <a class="btn" href="LIEN_BOUTIQUE_OU_COMMANDE" target="_blank" rel="noopener"><span>Boutique</span><span aria-hidden="true">↗</span></a>
-                <a class="btn" href="LIEN_CATALOGUE" target="_blank" rel="noopener"><span>Catalogue</span><span aria-hidden="true">↗</span></a>
-              </div>
-              <div class="note">
-                VDI indépendante — conseils & accompagnement. Commandes via liens officiels.
-              </div>
+          <div class="bigCard">
+            <h3>Me joindre</h3>
+            <div class="contactLines">
+              <a class="line" href="tel:+33661082001"><span>Téléphone</span><b>06 61 08 20 01</b></a>
+              <a class="line" href="mailto:sylvie.breu@laposte.net"><span>Email</span><b>sylvie.breu@laposte.net</b></a>
+              <a class="line" href="https://wa.me/33661082001" target="_blank" rel="noopener"><span>WhatsApp</span><b>Ouvrir</b></a>
+              <a class="line" href="best-sellers.html"><span>Best sellers</span><b>Voir la page</b></a>
+            </div>
+
+            <div class="tiny" style="margin-top:12px;">
+              À ajouter : lien boutique / catalogue / Instagram (tu me le donnes et je te l’intègre partout).
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
     <footer class="footer">
       <div class="wrap">
-        © <span id="year"></span> NOM MAMAN — Conseillère VDI.<br/>
-        Site vitrine personnel (non officiel). Marques et produits restent la propriété de leurs ayants droit. Les commandes se font via liens officiels.
+        © <span id="year"></span> Sylvie Materne — Conseillère VDI.<br/>
+        Site vitrine personnel (non officiel). Commandes via liens officiels. Images : placeholders à remplacer.
       </div>
     </footer>
   </main>
 
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Détails produit">
-    <div class="mBox">
-      <div class="mTop">
-        <div style="font-size:13px;color:var(--muted)">Détails</div>
-        <button class="x" id="closeModal" type="button" aria-label="Fermer">✕</button>
-      </div>
-      <div class="mContent">
-        <div class="mMedia">
-          <div class="mMeta" id="mMeta"></div>
-        </div>
-        <div class="mInfo">
-          <h3 id="mTitle"></h3>
-          <p id="mDesc"></p>
-          <div class="ctaRow" style="margin-top:14px;">
-            <a class="btn primary" id="mLink" href="LIEN_BOUTIQUE_OU_COMMANDE" target="_blank" rel="noopener"><span>Voir / Commander</span><span aria-hidden="true">↗</span></a>
-            <a class="btn" href="#contact" id="mAsk"><span>Me demander conseil</span><span aria-hidden="true">→</span></a>
-          </div>
-          <div class="note">Les liens de commande doivent être ceux de ta mère (VDI).</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const FAVORIS = [
-      {
-        id:"p1",
-        name:"Le thé du globe-trotteur",
-        price:"18,00€",
-        tag:"Thé",
-        desc:"Une escale équilibrée, parfaite pour découvrir l’univers et voyager en douceur.",
-        meta:["Découverte","Évasion","Polyvalent"],
-        link:"LIEN_PRODUIT_1"
-      },
-      {
-        id:"p2",
-        name:"Cocktail de fruits",
-        price:"19,50€",
-        tag:"Infusion",
-        desc:"Fruité et généreux. Top si tu aimes les notes gourmandes, aussi bon en thé glacé.",
-        meta:["Fruité","Glacé","Gourmand"],
-        link:"LIEN_PRODUIT_2"
-      },
-      {
-        id:"p3",
-        name:"Sur une plage des Caraïbes",
-        price:"20,00€",
-        tag:"Thé",
-        desc:"Ambiance vacances : une tasse qui sent l’évasion, idéale pour changer du quotidien.",
-        meta:["Exotique","Soleil","Coup de cœur"],
-        link:"LIEN_PRODUIT_3"
-      },
-      {
-        id:"p4",
-        name:"Pause au Hammam",
-        price:"16,50€",
-        tag:"Infusion",
-        desc:"Une pause bien-être : douce, réconfortante, parfaite pour ralentir en fin de journée.",
-        meta:["Détente","Soir","Cocon"],
-        link:"LIEN_PRODUIT_4"
-      }
-    ];
-
-    const grid = document.getElementById("prodGrid");
-    const modal = document.getElementById("modal");
-    const closeModal = document.getElementById("closeModal");
-    const mTitle = document.getElementById("mTitle");
-    const mDesc = document.getElementById("mDesc");
-    const mMeta = document.getElementById("mMeta");
-    const mLink = document.getElementById("mLink");
-
-    function esc(s){
-      return String(s)
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-    }
-
-    function render(){
-      grid.innerHTML = FAVORIS.map(p => `
-        <article class="prod" data-id="${esc(p.id)}" tabindex="0" role="button" aria-label="Voir ${esc(p.name)}">
-          <div class="ph">
-            <span class="tag">${esc(p.tag)}</span>
-            <span class="price">${esc(p.price)}</span>
-          </div>
-          <div class="pb">
-            <h3 class="pn">${esc(p.name)}</h3>
-            <p class="pd">${esc(p.desc)}</p>
-          </div>
-        </article>
-      `).join("");
-
-      [...grid.querySelectorAll(".prod")].forEach(el=>{
-        el.addEventListener("click", ()=>open(el.dataset.id));
-        el.addEventListener("keydown", (e)=>{
-          if(e.key==="Enter" || e.key===" "){ e.preventDefault(); open(el.dataset.id); }
-        });
-      });
-    }
-
-    function open(id){
-      const p = FAVORIS.find(x=>x.id===id);
-      if(!p) return;
-      mTitle.textContent = p.name;
-      mDesc.textContent = p.desc;
-      mMeta.innerHTML = (p.meta||[]).map(t=>`<span class="miniPill">${esc(t)}</span>`).join("");
-      mLink.href = p.link && p.link !== "LIEN_PRODUIT_"+id ? p.link : "LIEN_BOUTIQUE_OU_COMMANDE";
-      modal.classList.add("open");
-    }
-
-    function close(){
-      modal.classList.remove("open");
-    }
-
-    modal.addEventListener("click", (e)=>{ if(e.target===modal) close(); });
-    closeModal.addEventListener("click", close);
-    document.addEventListener("keydown", (e)=>{ if(e.key==="Escape") close(); });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    document.getElementById("contactForm").addEventListener("submit", (e)=>{
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const contact = document.getElementById("contactField").value.trim();
-      const msg = document.getElementById("msg").value.trim();
-      const subject = encodeURIComponent("Demande — Thés / Infusions / Bijoux");
-      const body = encodeURIComponent(
-        `Bonjour,\n\nJe m'appelle ${name}.\nContact: ${contact}\n\nMessage:\n${msg}\n\nMerci !`
-      );
-      const to = "TONEMAIL@EXEMPLE.COM";
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    });
-
-    render();
-  </script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
