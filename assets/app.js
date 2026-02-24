@@ -48,11 +48,7 @@ if (form) {
 }
 
 /* =========================
-   Carousel (FIX)
-   Compatible avec le HTML que je t’ai donné :
-   - .carousel__track
-   - .slide
-   - [data-dots]
+   Carousel (4:5 + flèches + dots)
    ========================= */
 (function () {
   const carousels = document.querySelectorAll("[data-carousel]");
@@ -63,7 +59,7 @@ if (form) {
     const slides = track ? Array.from(track.querySelectorAll(".slide")) : [];
     const prev = carousel.querySelector("[data-prev]");
     const next = carousel.querySelector("[data-next]");
-    const dotsWrap = document.querySelector("[data-dots]");
+    const dotsWrap = carousel.parentElement.querySelector("[data-dots]");
 
     if (!track || slides.length === 0) return;
 
@@ -73,7 +69,7 @@ if (form) {
       return Number.isFinite(gap) ? gap : 0;
     };
 
-    const getSlideWidth = () => {
+    const getSlideStep = () => {
       const w = slides[0].getBoundingClientRect().width;
       return w + getGap();
     };
@@ -81,9 +77,9 @@ if (form) {
     const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
 
     const getIndex = () => {
-      const w = getSlideWidth();
-      if (!w) return 0;
-      return clamp(Math.round(track.scrollLeft / w), 0, slides.length - 1);
+      const step = getSlideStep();
+      if (!step) return 0;
+      return clamp(Math.round(track.scrollLeft / step), 0, slides.length - 1);
     };
 
     const setActiveDot = (i) => {
@@ -93,9 +89,9 @@ if (form) {
     };
 
     const scrollToIndex = (i) => {
-      const w = getSlideWidth();
+      const step = getSlideStep();
       const idx = clamp(i, 0, slides.length - 1);
-      track.scrollTo({ left: idx * w, behavior: "smooth" });
+      track.scrollTo({ left: idx * step, behavior: "smooth" });
       setActiveDot(idx);
     };
 
@@ -104,9 +100,7 @@ if (form) {
       dotsWrap.innerHTML = slides
         .map(
           (_, i) =>
-            `<button type="button" aria-label="Aller à la slide ${i + 1}" aria-current="${
-              i === 0 ? "true" : "false"
-            }"></button>`
+            `<button type="button" aria-label="Aller à la slide ${i + 1}" aria-current="${i === 0 ? "true" : "false"}"></button>`
         )
         .join("");
 
@@ -119,19 +113,16 @@ if (form) {
     prev?.addEventListener("click", () => scrollToIndex(getIndex() - 1));
     next?.addEventListener("click", () => scrollToIndex(getIndex() + 1));
 
-    // Keep dots in sync on manual scroll
+    // Sync dots on scroll
     track.addEventListener(
       "scroll",
-      () => {
-        setActiveDot(getIndex());
-      },
+      () => setActiveDot(getIndex()),
       { passive: true }
     );
 
     // Recalc on resize
     window.addEventListener("resize", () => scrollToIndex(getIndex()));
 
-    // Init
     scrollToIndex(0);
   });
 })();
