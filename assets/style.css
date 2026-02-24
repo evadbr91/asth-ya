@@ -1,14 +1,14 @@
 :root{
-  --bg0:#06060b;
-  --bg1:#090a12;
-  --panel: rgba(255,255,255,.06);
-  --stroke: rgba(255,255,255,.10);
-  --text: rgba(255,255,255,.92);
-  --muted: rgba(255,255,255,.70);
+  --bg0:#ffffff;
+  --bg1:#ffffff;
+  --panel: rgba(0,0,0,.03);
+  --stroke: rgba(0,0,0,.10);
+  --text:#111214;
+  --muted: rgba(0,0,0,.60);
   --accent:#2f5b4a;
   --accent2:#3a7d63;
   --radius: 18px;
-  --shadow: 0 18px 60px rgba(0,0,0,.45);
+  --shadow: 0 18px 60px rgba(0,0,0,.10);
   --wrap: 1100px;
 }
 
@@ -18,38 +18,38 @@ body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color:var(--text);
-  background:
-    radial-gradient(1100px 600px at 20% -10%, rgba(47,91,74,.35), transparent 65%),
-    radial-gradient(900px 520px at 90% 0%, rgba(58,125,99,.25), transparent 60%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
+  background:#fff;
 }
 
 a{color:inherit; text-decoration:none}
-img{max-width:100%}
+img{max-width:100%; display:block}
 
 .wrap{
   width:min(var(--wrap), calc(100% - 40px));
   margin:0 auto;
 }
 
-.section{padding: 56px 0}
-.section--alt{background: rgba(255,255,255,.02); border-top:1px solid rgba(255,255,255,.05); border-bottom:1px solid rgba(255,255,255,.05)}
-.section__head{margin-bottom: 18px}
+.section{padding:56px 0}
+.section--alt{background:#fafafa; border-top:1px solid rgba(0,0,0,.06); border-bottom:1px solid rgba(0,0,0,.06)}
+.section__head{margin-bottom:18px}
+
 h1,h2,h3{margin:0 0 10px}
 h1{font-size: clamp(30px, 4vw, 46px); letter-spacing:-.02em}
 h2{font-size: clamp(22px, 3vw, 30px); letter-spacing:-.01em}
 h3{font-size: 18px}
+
 .sub{color: var(--muted); margin:0}
 .lead{color: var(--muted); font-size: 16px; line-height:1.6; margin: 0 0 16px}
-.tiny{color: rgba(255,255,255,.62); font-size: 12px; margin: 10px 0 0}
+.tiny{color: rgba(0,0,0,.55); font-size: 12px; margin: 10px 0 0}
 
+/* ===== TOPBAR ===== */
 .topbar{
   position: sticky;
   top:0;
   z-index:50;
-  backdrop-filter: blur(12px);
-  background: rgba(6,6,11,.62);
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.92);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  backdrop-filter: blur(10px);
 }
 
 .topbar__row{
@@ -76,14 +76,15 @@ h3{font-size: 18px}
 }
 
 .brand__text strong{display:block; font-weight:800; letter-spacing:.01em}
-.brand__text em{display:block; font-style:normal; color: rgba(255,255,255,.65); font-size: 12px; margin-top:2px}
+.brand__text em{display:block; font-style:normal; color: rgba(0,0,0,.55); font-size: 12px; margin-top:2px}
 
-.nav{display:none; gap:14px; color: rgba(255,255,255,.72)}
+.nav{display:none; gap:14px; color: rgba(0,0,0,.70)}
 .nav a{padding:8px 10px; border-radius: 999px}
-.nav a:hover{background: rgba(255,255,255,.06)}
+.nav a:hover{background: rgba(0,0,0,.04)}
 
 .topbar__cta{display:none; gap:10px; align-items:center}
 
+/* ===== BUTTONS ===== */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -91,50 +92,58 @@ h3{font-size: 18px}
   gap:8px;
   padding: 10px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(0,0,0,.02);
   color: var(--text);
   cursor:pointer;
   transition: transform .15s ease, background .15s ease, border-color .15s ease;
 }
-.btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.18)}
-.btn--primary{background: linear-gradient(135deg, var(--accent), var(--accent2)); border-color: transparent}
+.btn:hover{transform: translateY(-1px); background: rgba(0,0,0,.04); border-color: rgba(0,0,0,.14)}
+.btn--primary{background: linear-gradient(135deg, var(--accent), var(--accent2)); border-color: transparent; color:#fff}
 .btn--primary:hover{background: linear-gradient(135deg, var(--accent2), var(--accent))}
-.btn--ghost{background: rgba(255,255,255,.03)}
+.btn--ghost{background: rgba(0,0,0,.015)}
 
+/* ===== BURGER + MOBILE ===== */
 .burger{
   width:44px; height:44px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(0,0,0,.02);
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:6px;
   padding: 0 10px;
 }
-.burger span{height:2px; width:100%; background: rgba(255,255,255,.82); border-radius: 999px}
+.burger span{height:2px; width:100%; background: rgba(0,0,0,.75); border-radius: 999px}
 
 .mobile{
-  border-top: 1px solid rgba(255,255,255,.08);
-  background: rgba(6,6,11,.82);
+  border-top: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.96);
 }
 .mobile__inner{
   padding: 14px 0 18px;
   display:grid;
   gap: 10px;
 }
-.mobile__inner a{padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,.04)}
+.mobile__inner a{
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(0,0,0,.02);
+  border: 1px solid rgba(0,0,0,.06);
+}
 .mobile__cta{display:grid; gap:10px; margin-top: 6px}
 
+/* ===== BANDEAU ===== */
 .heroBanner img{
   width:100%;
   height: clamp(220px, 26vw, 420px);
   object-fit: cover;
   display:block;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(0,0,0,.08);
 }
 
+/* ===== HERO ===== */
 .hero{padding: 34px 0 8px}
 .hero--simple{padding-top: 26px}
 .hero__grid{display:grid; gap: 20px}
@@ -145,9 +154,9 @@ h3{font-size: 18px}
 .badge{
   padding: 7px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-  color: rgba(255,255,255,.82);
+  border: 1px solid rgba(47,91,74,.18);
+  background: rgba(47,91,74,.08);
+  color: #1c3a2f;
   font-size: 12px;
 }
 
@@ -161,28 +170,32 @@ h3{font-size: 18px}
   gap: 10px;
   padding: 10px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(0,0,0,.05);
 }
 .miniPill b{font-size: 12px}
-.miniPill span{font-size: 12px; color: rgba(255,255,255,.68)}
+.miniPill span{font-size: 12px; color: rgba(0,0,0,.55)}
 
+/* ===== STEPS / CTA ===== */
 .steps{display:grid; gap: 12px}
 .step{
   display:flex;
   gap: 12px;
   padding: 14px;
   border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
 }
 .step__n{
   width: 34px; height: 34px;
   border-radius: 12px;
   display:grid; place-items:center;
-  background: linear-gradient(135deg, rgba(47,91,74,.65), rgba(58,125,99,.45));
-  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(135deg, rgba(47,91,74,.25), rgba(58,125,99,.20));
+  border: 1px solid rgba(0,0,0,.06);
   font-weight: 800;
+  color: #173026;
 }
 
 .ctaBand{
@@ -194,33 +207,24 @@ h3{font-size: 18px}
   gap: 12px;
   padding: 16px;
   border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
 }
 
-.grid4{
+/* ===== GRIDS ===== */
+.grid4, .grid3, .grid2{
   display:grid;
   gap: 12px;
   grid-template-columns: 1fr;
 }
 
-.grid3{
-  display:grid;
-  gap: 12px;
-  grid-template-columns: 1fr;
-}
-
-.grid2{
-  display:grid;
-  gap: 12px;
-  grid-template-columns: 1fr;
-}
-
+/* ===== CARDS ===== */
 .product, .giftCard, .bigCard{
   border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
-  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
 }
 
 .product{
@@ -230,36 +234,43 @@ h3{font-size: 18px}
   align-items:center;
 }
 .product__body strong{display:block}
-.product__body span{display:block; color: rgba(255,255,255,.68); font-size: 12px; margin-top:3px}
+.product__body span{display:block; color: rgba(0,0,0,.55); font-size: 12px; margin-top:3px}
 
 .giftCard{overflow:hidden}
 .giftCard__body{padding: 14px}
 
 .bigCard{padding: 16px}
-.list{margin: 12px 0 0; padding-left: 18px; color: rgba(255,255,255,.72)}
+.list{margin: 12px 0 0; padding-left: 18px; color: rgba(0,0,0,.62)}
 .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top: 12px}
 
 .center{display:flex; justify-content:center; margin-top: 16px}
 
+/* ===== FAQ ===== */
 .faq details{
   padding: 14px;
   border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
 }
 .faq details + details{margin-top: 10px}
 .faq summary{cursor:pointer; font-weight: 700}
-.faq p{color: rgba(255,255,255,.72); margin: 10px 0 0; line-height: 1.55}
+.faq p{color: rgba(0,0,0,.62); margin: 10px 0 0; line-height: 1.55}
 
+/* ===== FORM ===== */
 .form{display:grid; gap: 10px}
 input, textarea{
   width: 100%;
   padding: 12px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.20);
+  border: 1px solid rgba(0,0,0,.10);
+  background: #fff;
   color: var(--text);
   outline: none;
+}
+input:focus, textarea:focus{
+  border-color: rgba(47,91,74,.45);
+  box-shadow: 0 0 0 4px rgba(47,91,74,.12);
 }
 textarea{min-height: 110px; resize: vertical}
 
@@ -271,27 +282,28 @@ textarea{min-height: 110px; resize: vertical}
   gap: 12px;
   padding: 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
 }
-.line span{color: rgba(255,255,255,.70); font-size: 12px}
+.line span{color: rgba(0,0,0,.58); font-size: 12px}
 .line b{font-size: 13px}
 
 .footerNote{
   text-align:center;
-  color: rgba(255,255,255,.55);
+  color: rgba(0,0,0,.50);
   font-size: 12px;
   padding: 24px 0 12px;
 }
 
-/* Placeholders (tu peux garder) */
+/* ===== PLACEHOLDERS ===== */
 .ph{
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(0,0,0,.08);
   background:
-    radial-gradient(120px 100px at 20% 20%, rgba(47,91,74,.35), transparent 60%),
-    radial-gradient(160px 120px at 80% 40%, rgba(58,125,99,.22), transparent 60%),
-    rgba(255,255,255,.03);
+    radial-gradient(120px 100px at 20% 20%, rgba(47,91,74,.18), transparent 60%),
+    radial-gradient(160px 120px at 80% 40%, rgba(58,125,99,.14), transparent 60%),
+    rgba(0,0,0,.02);
 }
 .ph--thumb{width: 64px; height: 64px}
 .ph--a{filter: saturate(1.1)}
@@ -299,22 +311,15 @@ textarea{min-height: 110px; resize: vertical}
 .ph--c{filter: saturate(1.0)}
 .ph--d{filter: saturate(0.95)}
 
-/* Page Best sellers */
-.pageHero{
-  padding: 42px 0 14px;
-}
-.productRow{
-  display:grid;
-  grid-template-columns: 72px 1fr;
-  gap: 14px;
-  align-items:start;
-}
+/* ===== PAGE HERO (best sellers) ===== */
+.pageHero{padding: 42px 0 14px}
+.productRow{display:grid; grid-template-columns: 72px 1fr; gap: 14px; align-items:start}
 
-/* Reveal */
+/* ===== REVEAL ===== */
 .reveal{opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease}
 .reveal.is-visible{opacity: 1; transform: translateY(0)}
 
-/* ===== CAROUSEL 4:5 (1200x1500) ===== */
+/* ===== CAROUSEL 4:5 ===== */
 .carousel{
   position: relative;
   display: grid;
@@ -334,7 +339,7 @@ textarea{min-height: 110px; resize: vertical}
   padding: 6px 2px;
 }
 .carousel__track::-webkit-scrollbar{height: 8px}
-.carousel__track::-webkit-scrollbar-thumb{background: rgba(255,255,255,.12); border-radius: 999px}
+.carousel__track::-webkit-scrollbar-thumb{background: rgba(0,0,0,.12); border-radius: 999px}
 
 .slide{
   flex: 0 0 78%;
@@ -347,11 +352,11 @@ textarea{min-height: 110px; resize: vertical}
 
 .imgSlide{
   width: 100%;
-  aspect-ratio: 4 / 5; /* EXACT pour 1200x1500 */
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 18px;
   display:block;
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid rgba(0,0,0,.08);
 }
 
 .slide__cap{
@@ -361,24 +366,25 @@ textarea{min-height: 110px; resize: vertical}
   bottom: 12px;
   padding: 10px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.65);
+  background: rgba(255,255,255,.70);
   backdrop-filter: blur(10px);
 }
 .slide__cap strong{display:block; font-size: 13px}
-.slide__cap span{display:block; font-size: 12px; color: rgba(255,255,255,.70); margin-top:2px}
+.slide__cap span{display:block; font-size: 12px; color: rgba(0,0,0,.60); margin-top:2px}
 
 .carousel__btn{
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(0,0,0,.25);
-  color: rgba(255,255,255,.90);
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.90);
+  color: rgba(0,0,0,.75);
   cursor:pointer;
 }
-.carousel__btn:hover{background: rgba(0,0,0,.35)}
+.carousel__btn:hover{background: #fff}
 
+/* Dots */
 .carouselDots{
   display:flex;
   gap: 8px;
@@ -390,12 +396,12 @@ textarea{min-height: 110px; resize: vertical}
   height: 8px;
   border-radius: 999px;
   border: 0;
-  background: rgba(255,255,255,.22);
+  background: rgba(0,0,0,.22);
   cursor:pointer;
 }
-.carouselDots button[aria-current="true"]{background: rgba(255,255,255,.78)}
+.carouselDots button[aria-current="true"]{background: rgba(0,0,0,.70)}
 
-/* Responsive header */
+/* ===== RESPONSIVE ===== */
 @media (min-width: 980px){
   .nav{display:flex}
   .topbar__cta{display:flex}
