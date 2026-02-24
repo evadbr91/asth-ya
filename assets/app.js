@@ -1,0 +1,105 @@
+// Year
+document.querySelectorAll("#year").forEach((el) => {
+  el.textContent = new Date().getFullYear();
+});
+
+// Mobile nav
+const burger = document.getElementById("burger");
+const mobileNav = document.getElementById("mobileNav");
+
+if (burger && mobileNav) {
+  burger.addEventListener("click", () => {
+    const expanded = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!expanded));
+    mobileNav.hidden = expanded;
+  });
+}
+
+// Reveal on scroll
+const reveals = Array.from(document.querySelectorAll(".reveal"));
+if (reveals.length) {
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("is-visible");
+      });
+    },
+    { threshold: 0.12 }
+  );
+  reveals.forEach((el) => io.observe(el));
+}
+
+// Contact form (mailto)
+const form = document.getElementById("contactForm");
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = (document.getElementById("name")?.value || "").trim();
+    const who = (document.getElementById("who")?.value || "").trim();
+    const msg = (document.getElementById("msg")?.value || "").trim();
+
+    const subject = encodeURIComponent("Demande — Thés / Infusions / Bijoux");
+    const body = encodeURIComponent(
+      `Bonjour Sylvie,\n\nJe m'appelle ${name}.\nContact: ${who}\n\nMessage:\n${msg}\n\nMerci !`
+    );
+
+    window.location.href = `mailto:sylvie.breu@laposte.net?subject=${subject}&body=${body}`;
+  });
+}
+
+// Carousel
+const carousel = document.querySelector("[data-carousel]");
+if (carousel) {
+  const track = carousel.querySelector("[data-track]");
+  const prev = carousel.querySelector("[data-prev]");
+  const next = carousel.querySelector("[data-next]");
+  const dotsWrap = document.querySelector("[data-dots]");
+  const slides = track ? Array.from(track.children) : [];
+
+  let index = 0;
+
+  function goTo(i) {
+    if (!track || slides.length === 0) return;
+    index = (i + slides.length) % slides.length;
+
+    const w = track.clientWidth;
+    track.scrollTo({ left: index * w, behavior: "smooth" });
+
+    if (dotsWrap) {
+      dotsWrap.querySelectorAll("button").forEach((b, idx) => {
+        b.classList.toggle("active", idx === index);
+      });
+    }
+  }
+
+  if (dotsWrap && slides.length) {
+    dotsWrap.innerHTML = slides
+      .map((_, i) => `<button type="button" aria-label="Aller au slide ${i + 1}"></button>`)
+      .join("");
+
+    dotsWrap.querySelectorAll("button").forEach((btn, i) => {
+      btn.addEventListener("click", () => goTo(i));
+    });
+
+    dotsWrap.querySelectorAll("button")[0]?.classList.add("active");
+  }
+
+  prev?.addEventListener("click", () => goTo(index - 1));
+  next?.addEventListener("click", () => goTo(index + 1));
+
+  let timer = setInterval(() => goTo(index + 1), 5500);
+
+  ["pointerdown", "touchstart", "mouseenter"].forEach((evt) => {
+    carousel.addEventListener(
+      evt,
+      () => {
+        if (timer) clearInterval(timer);
+        timer = null;
+      },
+      { once: true }
+    );
+  });
+
+  window.addEventListener("resize", () => goTo(index));
+  goTo(0);
+}
